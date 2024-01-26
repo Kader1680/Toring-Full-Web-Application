@@ -1,4 +1,10 @@
 <style>
+
+body {
+  background: #70e1f5;
+  background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);
+  background: linear-gradient(to right, #ffd194, #70e1f5);
+}
     form {
   min-width:300px;
   max-width:400px;
@@ -32,11 +38,7 @@ form button:hover {
 .pull-right {
   float:right;
 }
-body {
-  background: #70e1f5;
-  background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);
-  background: linear-gradient(to right, #ffd194, #70e1f5);
-}
+
 </style>
 
 @extends("layout.master")
@@ -56,7 +58,8 @@ body {
         <input type="text" class="form-control" name="password">
       </div>
 
-        <button type="submit" class="btn bg-danger" style="float:right">Submit</button>
+      <button type="submit" class="btn bg-danger" style="float:right">Submit</button>
+      <button type="submit" class="btn bg-danger" style="float:right"><a href="/register">Register</a></button>
        </form>
   </div>
 

@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function PHPUnit\Framework\returnValue;
+
 class AuthenticateController extends Controller
 {
     public function register(Request $request){
@@ -32,5 +34,12 @@ class AuthenticateController extends Controller
 
     public function loginPage(){
         return view("login");
+    }
+
+    public function logout(){
+        Auth::logout();
+
+        return redirect('/');
+
     }
 }

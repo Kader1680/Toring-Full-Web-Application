@@ -19,12 +19,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/{id}', [StorieController::class, 'show']);
-Route::get('/all', [StorieController::class, 'allStories'])->name("all");
-Route::post('/', [PostStorieController::class, 'PostStory'])->name("create");
-Route::get('/', [PostStorieController::class, 'FormStory']);
-Route::get('/sdddd', [PostStorieController::class, 'w']);
+Route::get('/stories', [StorieController::class, 'allStories'])->name("all")->middleware("auth");
+Route::post('/post', [PostStorieController::class, 'PostStory'])->name("create")->middleware("auth");
+Route::get('/post', [PostStorieController::class, 'FormStory'])->middleware("auth");
+
 Route::post('/register', [AuthenticateController::class, 'register'])->name("register");
 Route::get('/register', [AuthenticateController::class, 'registerPage']);
-Route::get('/login', [AuthenticateController::class, 'loginPage']);
-Route::post('/login', [AuthenticateController::class, 'login'])->name("login");
-Route::get('/profil', [ProfilController::class, 'profil']);
+Route::get('/', [AuthenticateController::class, 'loginPage']);
+Route::post('/', [AuthenticateController::class, 'login'])->name("login");
+Route::get('/logout', [AuthenticateController::class, 'logout'])->name("logout");
+
+Route::get('/profil', [ProfilController::class, 'profil'])->middleware("auth");
