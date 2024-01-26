@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Story;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+class PostStorieController extends Controller
+{
+    public function PostStory(Request $request){
+
+        $id = Auth::user()->id;
+
+        $data = [
+            'title' => $request->title,
+            'content' => $request->content,
+            'id_story' => $id,
+
+        ];
+        try {
+            Story::create($data);
+            return redirect()->route("all");
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        }
+    }
+
+    public function FormStory(){
+
+
+        return view("post");
+    }
+    public function w(){
+
+
+        return view("welcome");
+    }
+}
+
+
