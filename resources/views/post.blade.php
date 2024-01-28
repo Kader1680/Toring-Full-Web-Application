@@ -38,7 +38,9 @@ body {
   background: linear-gradient(to right, #ffd194, #70e1f5);
 }
 </style>
-
+<head>
+    <title>Tor | Create Storing</title>
+</head>
 @extends("layout.master")
 @section("content")
 

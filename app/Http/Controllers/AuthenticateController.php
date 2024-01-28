@@ -12,7 +12,7 @@ class AuthenticateController extends Controller
 {
     public function register(Request $request){
         User::create($request->all());
-        return redirect()->route("all");
+        return redirect()->route("stories");
     }
 
     public function registerPage(Request $request){
@@ -24,10 +24,10 @@ class AuthenticateController extends Controller
             'password' => ['required'],
         ]);
         if (Auth::attempt($credentials)) {
-            return redirect()->route("all");
+            return redirect()->route("stories");
 
         }else{
-            return redirect()->route("login");
+            return redirect()->route("login")->with('error', "Inforamtion Invalid");
 
         }
     }

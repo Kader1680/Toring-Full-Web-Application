@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/{id}', [StorieController::class, 'show']);
-Route::get('/stories', [StorieController::class, 'allStories'])->name("all")->middleware("auth");
+Route::get('/stories', [StorieController::class, 'allStories'])->name("stories")->middleware("auth");
 Route::post('/post', [PostStorieController::class, 'PostStory'])->name("create")->middleware("auth");
 Route::get('/post', [PostStorieController::class, 'FormStory'])->middleware("auth");
 
@@ -30,3 +30,10 @@ Route::post('/', [AuthenticateController::class, 'login'])->name("login");
 Route::get('/logout', [AuthenticateController::class, 'logout'])->name("logout");
 
 Route::get('/profil', [ProfilController::class, 'profil'])->middleware("auth");
+// Route::get('/a', function (){
+//     return view("404");
+// });
+
+Route::fallback(function () {
+    return view('404');
+});

@@ -10,7 +10,7 @@
             <a class="nav-link active fs-5 fw-bolder" aria-current="page" href="/stories">All Stories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  fs-5 fw-bolder" href="/"><i class="fa-solid fa-add"></i> Add Story</a>
+            <a class="nav-link  fs-5 fw-bolder" href="/post"><i class="fa-solid fa-add"></i> Add Story</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fs-5 fw-bolder" href="/profil"><i class="fa-solid fa-user text-black"></i> Profil </a>
@@ -19,7 +19,7 @@
             <a class="nav-link fs-5 fw-bolder" href="/register">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 fw-bolder" href="/login">Login</a>
+            <a class="nav-link fs-5 fw-bolder" href="/">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fs-5 fw-bolder" href="{{ route("logout") }}">Logout</a>

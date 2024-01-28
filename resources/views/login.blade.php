@@ -14,6 +14,7 @@ body {
   -webkit-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
   -moz-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
   box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
+  height: 55%;
 }
 
 form input {
@@ -43,11 +44,13 @@ form button:hover {
 
 @extends("layout.master")
 @section("content")
-
+<head>
+    <title>Tor | Login</title>
+</head>
 <div class="container">
     <form method="POST" action="{{ route("login") }}">
        <h2 class="text-center fw-bolder mb-5">Login Page</h2>
-
+        {{-- <p>{{ message }}</p> --}}
         @csrf
        <div class="form-group">
         <label for="name">name :</label>
@@ -58,8 +61,8 @@ form button:hover {
         <input type="text" class="form-control" name="password">
       </div>
 
-      <button type="submit" class="btn bg-danger" style="float:right">Submit</button>
-      <button type="submit" class="btn bg-danger" style="float:right"><a href="/register">Register</a></button>
+      <button type="submit" class="btn " style="float:right">Submit</button>
+      <button type="submit" class="btn " style="float:right"><a href="/register">Register</a></button>
        </form>
   </div>
 

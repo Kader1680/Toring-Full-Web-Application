@@ -8,6 +8,8 @@
   -webkit-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
   -moz-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
   box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
+  height: 66%;
+
 }
 
 form input {
