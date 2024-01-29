@@ -7,6 +7,11 @@
     <form method="POST" action="{{ route("login") }}">
         @csrf
        <h2 class="text-center fw-bolder mb-5">Welcome To Toring</h2>
+
+       @if (session("errors"))
+       <div class="error">{{ $errors }}</div>
+       @endif
+
        <div class="form-group">
         <input placeholder="Enter Username" type="text" class="form-control" name="name">
       </div>

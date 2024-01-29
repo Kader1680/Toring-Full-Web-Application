@@ -7,19 +7,26 @@
       <div style="margin-top: -2rem" class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active fs-5 fw-bolder" aria-current="page" href="/stories">All Stories</a>
+            <a class="nav-link text-dark fs-4 fw-bolder me-lg-3" aria-current="page" href="/stories">All Stories</a>
           </li>
 
 
           <li class="nav-item">
-            <a class="nav-link  fs-5 fw-bolder" href="/post"><i class="fa-solid fa-add"></i> Add Story</a>
+            <a class="nav-link text-dark  fs-4 fw-bolder me-lg-3" href="/post"><i class="fa-solid fa-add"></i> Add Story</a>
           </li>
           @if(Auth::check())
           <li class="nav-item">
-            <a class="nav-link fs-5 fw-bolder" href="/profil"><i class="fa-solid fa-user text-black"></i> Profil </a>
+            <a class="nav-link  text-dark fs-4 fw-bolder me-lg-3" href="/profil"><i class="fa-solid fa-user text-black"></i> Profil </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 fw-bolder" href="{{ route("logout") }}">Logout</a>
+            <a class="nav-link text-dark fs-4 fw-bolder me-lg-3" href="{{ route("logout") }}">Logout</a>
+          </li>
+
+          @endif
+
+          @if (Auth::check() && Auth::user()->name == "admin" && Auth::user()->password == "$2y$12$0rE0XS9vZaYsII7C.K.lFecI7wWj7bCe5ptlqJRiOQcLDB.52FHRu")
+          <li class="nav-item">
+            <a class="nav-link text-dark fs-4 fw-bolder me-lg-3" href="/dashboard">Dashboard</a>
           </li>
           @endif
 

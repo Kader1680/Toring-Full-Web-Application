@@ -29,7 +29,7 @@ class AuthenticateController extends Controller
             return redirect()->route("stories");
 
         }else{
-            return redirect()->route("login");
+            return redirect()->route("login")->with('errors', 'Username or Password are Invalid');
         }
     }
 

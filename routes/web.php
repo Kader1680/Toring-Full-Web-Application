@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticateController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostStorieController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\StorieController;
@@ -30,6 +31,7 @@ Route::post('/', [AuthenticateController::class, 'login'])->name("login");
 Route::get('/logout', [AuthenticateController::class, 'logout'])->name("logout");
 
 Route::get('/profil', [ProfilController::class, 'profil'])->middleware("auth");
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware("admin");
 // Route::get('/profil', [ProfilController::class, 'infoUser'])->middleware("auth");
 // Route::get('/a', function (){
 //     return view("404");

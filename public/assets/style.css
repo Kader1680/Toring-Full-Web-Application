@@ -47,3 +47,11 @@ form {
 .comments p{
     font-size:14px;
 }
+.error{
+    padding: 8px;
+    background-color: #ff5757;
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+    font-size: 14px;
+}
