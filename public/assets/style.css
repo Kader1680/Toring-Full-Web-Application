@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html body{
+    background-color: #f5f6fa;
+    font-family: 'Dosis', sans-serif;
+}
+form {
+    min-width:300px;
+    max-width:400px;
+    padding:20px;
+    margin:0 auto;
+    background:#ffffff;
+    -webkit-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
+    -moz-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
+    box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
+    border-radius: 10px;
+  }
+  form input {
+    border:1px solid #eee;
+    border-radius:0 !important;
+    padding:5px 8px;
+    color:#444;
+  }
+ form button{
+      background-image: linear-gradient(to bottom left,#ff86ed,#ba54f5,#fc8ceb);
+      width: 100%;
+      color: white;
+      padding: 13px;
+      border-radius:8px;
+      font-size:13px;
+      border: 0;
+  }
+
+.comments{
+    background-color: #f8b2ed4a;
+    padding: 10px;
+    border-radius: 15px;
+}
+.comments h6{
+    font-size: 2rem;
+    color: #ba54f5;
+    font-family: 'Dosis', sans-serif;
+}
+.comments p{
+    font-size:14px;
+}

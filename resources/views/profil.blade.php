@@ -1,12 +1,6 @@
 
 <style>
-    html body{
 
-      background: #70e1f5;
-      background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);
-      background: linear-gradient(to right, #ffd194, #70e1f5);
-
-    }
     .comments{
         background-color: #bdadad6e;
         padding: 10px;

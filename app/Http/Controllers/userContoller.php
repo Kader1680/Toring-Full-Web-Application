@@ -9,9 +9,5 @@ use Illuminate\Http\Request;
 
 class userContoller extends Controller
 {
-    // public function allData($id){
-    //     $id;
-    //     $user = Story::all()->where('id_story', $id);
-    //     return view("welcome", compact('user'));
-    // }
+
 }

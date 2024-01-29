@@ -10,14 +10,9 @@ use Illuminate\Support\Facades\Auth;
 
 class StorieController extends Controller
 {
-    // public function show($id){
-    //     $user = Story::all()->where('id_story', $id);
-    //     $profil = User::all()->where('id', $id);
-    //     return view("stories", compact('user', 'profil'));
-    // }
+
     public function allStories(){
         $stories = Story::all();
-        $ID = Auth::user()->id;
-        return view("allstories", compact('stories', 'ID'));
+        return view("allstories", compact('stories'));
     }
 }

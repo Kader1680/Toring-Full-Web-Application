@@ -1,51 +1,3 @@
-<style>
-
-body {
-  background: #70e1f5;
-  background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);
-  background: linear-gradient(to right, #ffd194, #70e1f5);
-}
-    form {
-  min-width:300px;
-  max-width:400px;
-  padding:20px;
-  margin:0 auto;
-  background:#ffffff59;
-  -webkit-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
-  -moz-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
-  box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
-  /* height: 55%; */
-}
-
-form input {
-  border:1px solid #eee;
-  border-radius:0 !important;
-  padding:5px 8px;
-  color:#444;
-}
-
-form button {
-  color:#555;
-  background:#ffffffad;
-  border:1px solid #fff !important;
-  margin-top:20px;
-  border-radius:0px Important;
-}
-
-form button:hover {
-  background:#fff !important;
-}
-
-.pull-right {
-  float:right;
-}
-.login form .btn{
-    background-color: #5656ff;
-    width: 100%;
-    color: white;
-}
-</style>
-
 @extends("layout.master")
 @section("content")
 <head>
@@ -53,22 +5,21 @@ form button:hover {
 </head>
 <div class="container login">
     <form method="POST" action="{{ route("login") }}">
-       <h2 class="text-center fw-bolder mb-5">Login Page</h2>
-        {{-- <p>{{ message }}</p> --}}
         @csrf
+       <h2 class="text-center fw-bolder mb-5">Welcome To Toring</h2>
        <div class="form-group">
-        <label for="name">name :</label>
-        <input type="text" class="form-control" name="name">
+        <input placeholder="Enter Username" type="text" class="form-control" name="name">
       </div>
       <div class="form-group">
-        <label for="email">passowrd</label>
-        <input type="text" class="form-control" name="password">
+        <input placeholder="Enter Password" type="text" class="form-control" name="password">
       </div>
 
-      <div>
-        <button type="submit" class="btn " >Submit</button>
-      <button type="submit" class="btn " ><a href="/register">Register</a></button>
+      <div >
+        <button type="submit" class=" mb-4 " >Submit</button>
       </div>
+
+      <a class=" fs-5 reg" style="color: #ba54f5" href="/register">Create Account</a>
+
        </form>
   </div>
 

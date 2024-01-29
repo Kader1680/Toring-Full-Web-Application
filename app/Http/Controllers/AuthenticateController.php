@@ -29,8 +29,7 @@ class AuthenticateController extends Controller
             return redirect()->route("stories");
 
         }else{
-            return redirect()->route("login")->with('error', "Inforamtion Invalid");
-
+            return redirect()->route("login");
         }
     }
 
