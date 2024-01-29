@@ -37,6 +37,14 @@ body {
   background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);
   background: linear-gradient(to right, #ffd194, #70e1f5);
 }
+.post form .btn{
+    background-color: #5656ff;
+    width: 100%;
+    color: white;
+}
+.post form  textarea{
+    height: 30%;
+}
 </style>
 <head>
     <title>Tor | Create Storing</title>
@@ -44,24 +52,19 @@ body {
 @extends("layout.master")
 @section("content")
 
-<div class="container">
+<div class="container post">
     <form method="POST" action="{{ route("create") }}">
-        @csrf
-       <div class="form-group">
-        <label for="name">Title :</label>
-        <input type="text" class="form-control" name="title">
-      </div>
-      <div class="form-group">
-        <label for="dob">Content :</label>
-        <input type="text" class="form-control" name="content">
-      </div>
-      {{-- <div class="form-group">
-        <label for="email">user :</label>
-        <input type="text" class="form-control" name="id_story">
-      </div> --}}
-
-        <button type="submit" class="btn bg-danger" style="float:right">Submit</button>
-       </form>
-  </div>
+            @csrf
+        <div class="form-group">
+            <label for="name">Title :</label>
+            <input placeholder="Enter Story Title"  type="text" class="form-control" name="title">
+        </div>
+        <div class="form-group">
+            <label for="dob">Content :</label>
+            <textarea placeholder="Enter Story Content" type="text" class=" pt-4 form-control"  name="content"></textarea>
+        </div>
+        <button type="submit" class="btn">Add</button>
+    </form>
+</div>
 
 @endsection

@@ -30,6 +30,7 @@ Route::post('/', [AuthenticateController::class, 'login'])->name("login");
 Route::get('/logout', [AuthenticateController::class, 'logout'])->name("logout");
 
 Route::get('/profil', [ProfilController::class, 'profil'])->middleware("auth");
+// Route::get('/profil', [ProfilController::class, 'infoUser'])->middleware("auth");
 // Route::get('/a', function (){
 //     return view("404");
 // });

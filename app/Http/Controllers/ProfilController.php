@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Story;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,8 +11,20 @@ class ProfilController extends Controller
 {
     public function profil(){
         $ID = Auth::user()->id;
-
         $data = Story::all()->where("id_story", $ID);
-        return view("profil", compact('data'));
+        $userInfo = User::all()->where("id", $ID);
+        // if (empty($data)) {
+        //         // return "you don't have";
+        //         return view("profil", compact('userInfo'))->with("message", "don't have");
+        // }
+        return view("profil", compact('data'), compact('userInfo'));
+    }
+    public function infoUser(){
+        $ID = Auth::user()->id;
+        // if (empty($data)) {
+        //     // return "you don't have";
+        //     return view("404");
+        // }
+        // return view("profil", );
     }
 }

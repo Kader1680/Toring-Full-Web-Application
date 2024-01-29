@@ -11,8 +11,10 @@ use function PHPUnit\Framework\returnValue;
 class AuthenticateController extends Controller
 {
     public function register(Request $request){
-        User::create($request->all());
-        return redirect()->route("stories");
+        $register = User::create($request->all());
+        if ($register) {
+            return redirect()->route("stories");
+        }
     }
 
     public function registerPage(Request $request){

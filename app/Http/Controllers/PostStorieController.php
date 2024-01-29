@@ -22,7 +22,7 @@ class PostStorieController extends Controller
         ];
         try {
             Story::create($data);
-            return redirect()->route("all");
+            return redirect()->route("stories");
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()]);
         }

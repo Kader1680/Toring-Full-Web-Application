@@ -35,6 +35,7 @@
         <div class="ctn">
             <h1>404 Not Found</h1>
             <h3>Sorry, the page you are looking for could not be found.</h3>
+            <button class=" border-0 btn bg-danger p-3 "><a class=" fs-5 text-decoration-none text-white" href="/stories">Back To All Stories</a></button>
         </div>
     </div>
 @endsection

@@ -14,7 +14,7 @@ body {
   -webkit-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
   -moz-box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
   box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
-  height: 55%;
+  /* height: 55%; */
 }
 
 form input {
@@ -39,7 +39,11 @@ form button:hover {
 .pull-right {
   float:right;
 }
-
+.login form .btn{
+    background-color: #5656ff;
+    width: 100%;
+    color: white;
+}
 </style>
 
 @extends("layout.master")
@@ -47,7 +51,7 @@ form button:hover {
 <head>
     <title>Tor | Login</title>
 </head>
-<div class="container">
+<div class="container login">
     <form method="POST" action="{{ route("login") }}">
        <h2 class="text-center fw-bolder mb-5">Login Page</h2>
         {{-- <p>{{ message }}</p> --}}
@@ -61,8 +65,10 @@ form button:hover {
         <input type="text" class="form-control" name="password">
       </div>
 
-      <button type="submit" class="btn " style="float:right">Submit</button>
-      <button type="submit" class="btn " style="float:right"><a href="/register">Register</a></button>
+      <div>
+        <button type="submit" class="btn " >Submit</button>
+      <button type="submit" class="btn " ><a href="/register">Register</a></button>
+      </div>
        </form>
   </div>
 
