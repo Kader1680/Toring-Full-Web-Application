@@ -21,7 +21,18 @@ class StorieController extends Controller
         return view("allstories", compact('stories', 'comments'));
     }
 
-    // public function edit(){
-    //     $stories = Story::
+    // public function id($id){
+
+    //     $post = Story::find($id);
+
+    //     return $post;
     // }
+    public function destroy($id){
+        $post = Story::find($id);
+        $post->delete();
+
+if ($post) {
+}        return redirect()->route("stories");
+
+    }
 }

@@ -20,12 +20,5 @@ class ProfilController extends Controller
         }
         return view("profil", compact('data'), compact('userInfo'));
     }
-    public function infoUser(){
-        $ID = Auth::user()->id;
-        // if (empty($data)) {
-        //     // return "you don't have";
-        //     return view("404");
-        // }
-        // return view("profil", );
-    }
+
 }

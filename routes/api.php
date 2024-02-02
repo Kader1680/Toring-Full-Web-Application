@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\PostStorieController;
+use App\Http\Controllers\StorieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/register', [AuthenticateController::class, 'register']);
 Route::post('/login', [AuthenticateController::class, 'login']);
+Route::get('/stories', [StorieController::class, 'allStories'])->name("stories");
+Route::get('/stories/{id}', [StorieController::class, 'id'])->name("stories");
+
+// Route::delete('/stories/{id}', [StorieController::class, 'delete'])->name("stories");
+
