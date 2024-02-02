@@ -20,10 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/register', [AuthenticateController::class, 'register']);
-Route::post('/login', [AuthenticateController::class, 'login']);
-Route::get('/stories', [StorieController::class, 'allStories'])->name("stories");
-Route::get('/stories/{id}', [StorieController::class, 'id'])->name("stories");
+
+Route::patch('/stories/{id}', [StorieController::class, 'edit']);
 
 // Route::delete('/stories/{id}', [StorieController::class, 'delete'])->name("stories");
 

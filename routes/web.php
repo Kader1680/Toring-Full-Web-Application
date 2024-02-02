@@ -21,13 +21,14 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/{id}', [StorieController::class, 'show']);
 Route::get('/stories', [StorieController::class, 'allStories'])->name("stories");
-// Route::get('/stories/{id}', [StorieController::class, 'id'])->name("stories");
 
 
 
 Route::delete('/stories/{id}', [StorieController::class, 'destroy'])->name("delete");
 
 
+Route::put('/edit/{id}', [StorieController::class, 'edit'])->name("edit");
+Route::get('/stories/{id}', [StorieController::class, 'editView']);
 
 
 
@@ -48,6 +49,6 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(
 //     return view("404");
 // });
 
-Route::fallback(function () {
-    return view('404');
-});
+// Route::fallback(function () {
+//     return view('404');
+// });
