@@ -24,7 +24,7 @@
 
           @endif
 
-          @if (Auth::check() && Auth::user()->name == "admin" && Auth::user()->password == "$2y$12$0rE0XS9vZaYsII7C.K.lFecI7wWj7bCe5ptlqJRiOQcLDB.52FHRu")
+          @if (Auth::check() && Auth::user()->name == "admin" && Auth::user()->password == "$2y$12$75yPWdHhxiAJqGKmkUpeA.x5x/zCupdHPpmYtj2AkVjuUQZtwvXDW")
           <li class="nav-item">
             <a class="nav-link text-dark fs-4 fw-bolder me-lg-3" href="/dashboard">Dashboard</a>
           </li>

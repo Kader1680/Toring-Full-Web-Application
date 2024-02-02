@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class AdminMiddlware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,9 +17,8 @@ class AdminMiddlware
     public function handle(Request $request, Closure $next): Response
     {
 
-        if (Auth::user()->name == "admin" && Auth::user()->password == "$2y$12$0rE0XS9vZaYsII7C.K.lFecI7wWj7bCe5ptlqJRiOQcLDB.52FHRu") {
+        if (Auth::user()->name == "admin" && Auth::user()->password == "$2y$12$75yPWdHhxiAJqGKmkUpeA.x5x/zCupdHPpmYtj2AkVjuUQZtwvXDW") {
              return $next($request);
-
         }
 
         abort(401);

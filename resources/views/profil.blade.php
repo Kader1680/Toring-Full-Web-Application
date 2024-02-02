@@ -44,6 +44,8 @@
             <div class="comments mb-3">
 
                 <div class=" d-flex justify-content-between align-content-center">
+
+                    {{-- {{ $message }} --}}
                     {{-- @if(session('message'))
                         <div class="alert alert-success">
                             {{ session('message') }}

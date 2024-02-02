@@ -13,10 +13,11 @@ class ProfilController extends Controller
         $ID = Auth::user()->id;
         $data = Story::all()->where("id_story", $ID);
         $userInfo = User::all()->where("id", $ID);
-        // if (empty($data)) {
-        //         // return "you don't have";
-        //         return view("profil", compact('userInfo'))->with("message", "don't have");
-        // }
+        $count = $data->count();
+        if ($count < 0) {
+                // return "you don't have";
+                return view("profil", compact('userInfo'))->with("message", "don't have");
+        }
         return view("profil", compact('data'), compact('userInfo'));
     }
     public function infoUser(){
