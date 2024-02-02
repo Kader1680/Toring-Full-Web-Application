@@ -26,6 +26,9 @@
         }
     }
     </style>
+    <head>
+        <title>Toring | Profil</title>
+    </head>
 @extends("layout.master")
 @section("content")
 <div class=" container">
@@ -64,12 +67,18 @@
 
                 <div class=" d-flex align-items-center justify-content-between">
                     <h6 class=" fw-bolder">{{ $dt->title }}</h6>
-                    @auth
-                    <div>
-                        <img class=" me-3" width="20" src="{{ asset("assets/images/edit.svg") }}" alt="">
-                        <img width="20" src="{{ asset("assets/images/delete.svg") }}" alt="">
+                    <div class=" d-flex">
+                        <a href="/stories/{{ $dt->id }}">
+                            <img class=" me-3" width="15" src="{{ asset("assets/images/edit.svg") }}" alt="">
+                        </a>
+                        <form action="{{ route("delete", ['id' => $dt->id]) }}" method="POST">
+                        @csrf
+                        @method("DELETE")
+                        <button class="border-0 bg-transparent" type="submit">
+                            <img class=" me-3" width="15" src="{{ asset("assets/images/delete.svg") }}" alt="">
+                        </button>
+                        </form>
                     </div>
-                    @endauth
 
                 </div>
 

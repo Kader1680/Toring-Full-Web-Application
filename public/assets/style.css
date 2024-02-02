@@ -7,7 +7,7 @@ html body{
     background-color: #e1e1e1;
     font-family: 'Dosis', sans-serif;
 }
-form {
+.myform {
     min-width:300px;
     max-width:400px;
     padding:20px;
@@ -18,13 +18,13 @@ form {
     box-shadow: 3px 3px 23px -9px rgba(0,0,0,0.86);
     border-radius: 10px;
   }
-  form input {
+  .myform input {
     border:1px solid #eee;
     border-radius:0 !important;
     padding:5px 8px;
     color:#444;
   }
- form button{
+ .myform button{
       background-image: linear-gradient(to bottom left,#ff86ed,#ba54f5,#fc8ceb);
       width: 100%;
       color: white;

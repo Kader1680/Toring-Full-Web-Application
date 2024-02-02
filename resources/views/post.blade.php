@@ -12,7 +12,7 @@
 @section("content")
 
 <div class="container post">
-    <form method="POST" action="{{ route("create") }}">
+    <form class="myform" method="POST" action="{{ route("create") }}">
             @csrf
         <div class="form-group">
             <label for="name">Title :</label>

@@ -13,7 +13,7 @@
 
     <div class="container post">
 
-        <form method="POST" action="{{ route("edit", ['id' => $stories->id]) }}" enctype="multipart/form-data">
+        <form class="myform" method="POST" action="{{ route("edit", ['id' => $stories->id]) }}" enctype="multipart/form-data">
                 @csrf
             @method("put")
 
