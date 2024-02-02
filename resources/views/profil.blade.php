@@ -1,17 +1,29 @@
 
 <style>
 
-    .comments{
-        background-color: #bdadad6e;
-        padding: 10px;
-        border-radius: 10px 20px 10px 20px;
+    .empty{
+        background-color: #e1e1e1;
+    padding: 26px;
+    color: red;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 400;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 6px;
+
     }
-    .comments h6{
-        font-size: 2rem;
-        color: #1100ff;
-    }
-    .comments p{
-        font-size:14px;
+    @media(max-width:767px){
+        .allStories{
+        width: 96%;
+        margin: auto;
+        margin-top: 1rem;
+        padding-bottom: 2rem;
+        border-radius: 6px;
+
+        }
     }
     </style>
 @extends("layout.master")
@@ -19,49 +31,55 @@
 <div class=" container">
 
 <div class="row">
-    <div class="col-sm-12 col-md-3">
-        <div class=" p-4 bg-white  border d-flex align-items-center justify-content-center">
+    <div class="col-sm-12 col-md-3 bg-gray-100">
+        <div style="border-radius: 6px" class=" p-4 bg-white  border d-flex align-items-center justify-content-center">
             <img class="" width="100" height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1200px-User_icon_2.svg.png" alt="">
         </div>
-        <div class=" border">
+        <div style="border-radius: 6px" class="border mt-4 bg-white p-3 ">
             @foreach ($userInfo as $user)
             <h3>Welcome {{ $user->name }} </h3>
-            <ul>
-                <li><h4>First Name: {{ $user->FirstName }}</h4></li>
-                <li><h4>Last Name: {{ $user->LastName }}</h4></li>
-                <li><h4>Address {{ $user->Address }}</h4></li>
-                <li><h4>Phone: {{ $user->mobile }}</h4></li>
-            </ul>
+            <div>
+                <h5>First Name: {{ $user->FirstName }}</h5>
+                <h5>Last Name: {{ $user->LastName }}</h5>
+                <h5>Address: {{ $user->Address }}</h5>
+                <h5>Phone: {{ $user->mobile }}</h5>
+            </div>
             @endforeach
 
         </div>
     </div>
 
-    <div class="col-sm-12 col-md-6" >
-        <h4 class="mt-5 mb-5 fw-bolder">All Your Stories </h4>
+    <div class="col-sm-12 col-md-9 bg-white allStories" >
+        <div><h4 class="mt-5 mb-5 fw-bolder">All Have  ({{ $data->count() }}) Stories </h4>
+        <span>
+
+
+        </span>
+        </div>
+        @if ($data->count() > 0)
         @foreach ( $data as $dt)
-        <div class="">
-            <div class="comments mb-3">
 
-                <div class=" d-flex justify-content-between align-content-center">
+        <div>
+            <div style="background-color: #f8b2ed4a" class="comments mb-3">
 
-                    {{-- {{ $message }} --}}
-                    {{-- @if(session('message'))
-                        <div class="alert alert-success">
-                            {{ session('message') }}
-                        </div>
-                    @endif --}}
+                <div class=" d-flex align-items-center justify-content-between">
                     <h6 class=" fw-bolder">{{ $dt->title }}</h6>
-                    <div class=" d-flex justify-content-center">
-                        <button class="border-0 "><a href="/delete/{id}"><i class="fa-solid fa-pen-to-square"></i></a></button>
-                        <button class="border-0"><a href="/edit/{id}"><i class="fa-solid fa-trash"></i></a></button>
+                    @auth
+                    <div>
+                        <img class=" me-3" width="20" src="{{ asset("assets/images/edit.svg") }}" alt="">
+                        <img width="20" src="{{ asset("assets/images/delete.svg") }}" alt="">
                     </div>
+                    @endauth
+
                 </div>
 
                 <p>{{ $dt->content }}</p>
             </div>
         </div>
         @endforeach
+        @else
+          <div class="empty">you don't have any story</div>
+        @endif
     </div>
 </div>
 

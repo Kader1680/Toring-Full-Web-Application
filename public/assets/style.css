@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 html body{
-    background-color: #f5f6fa;
+    background-color: #e1e1e1;
     font-family: 'Dosis', sans-serif;
 }
 form {
@@ -35,7 +35,9 @@ form {
   }
 
 .comments{
-    background-color: #f8b2ed4a;
+    /* background-color: #f8b2ed4a; */
+    background-color: white;
+
     padding: 10px;
     border-radius: 15px;
 }

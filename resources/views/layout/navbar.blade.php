@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light rounded-0">
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded-0 p-lg-0">
     <div class="container-fluid">
       <a class="navbar-brand fs-2 fw-bolder" href="/stories"><img width="70" height="80" src="{{ asset("assets/images/logo.png") }}" alt="" srcset=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,13 +14,20 @@
           <li class="nav-item">
             <a class="nav-link text-dark  fs-4 fw-bolder me-lg-3" href="/post"><i class="fa-solid fa-add"></i> Add Story</a>
           </li>
-          @if(Auth::check())
-          <li class="nav-item">
+        @auth
+        <li class="nav-item">
             <a class="nav-link  text-dark fs-4 fw-bolder me-lg-3" href="/profil"><i class="fa-solid fa-user text-black"></i> Profil </a>
-          </li>
-          <li class="nav-item">
+        </li>
+        <li class="nav-item">
             <a class="nav-link text-dark fs-4 fw-bolder me-lg-3" href="{{ route("logout") }}">Logout</a>
+        </li>
+        @endauth
+
+          @if(!Auth::check())
+          <li class="nav-item">
+            <a class="nav-link  text-dark fs-4 fw-bolder me-lg-3" href="/">login </a>
           </li>
+
 
           @endif
 

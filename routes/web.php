@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/{id}', [StorieController::class, 'show']);
-Route::get('/stories', [StorieController::class, 'allStories'])->name("stories")->middleware("auth");
+Route::get('/stories', [StorieController::class, 'allStories'])->name("stories");
 Route::post('/post', [PostStorieController::class, 'PostStory'])->name("create")->middleware("auth");
 Route::get('/post', [PostStorieController::class, 'FormStory'])->middleware("auth");
 

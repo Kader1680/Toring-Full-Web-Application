@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comments;
 use App\Models\Profile;
 use App\Models\Story;
 use App\Models\User;
@@ -12,7 +13,15 @@ class StorieController extends Controller
 {
 
     public function allStories(){
+        // $auth = Auth::user()->id;
+        // $authStory = Story::all()->where('id_story', $auth);
         $stories = Story::all();
-        return view("allstories", compact('stories'));
+        $comments = Comments::all();
+
+        return view("allstories", compact('stories', 'comments'));
     }
+
+    // public function edit(){
+    //     $stories = Story::
+    // }
 }
