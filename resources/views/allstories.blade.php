@@ -49,24 +49,12 @@
 
         </div>
         <p>{{ $st->content }}</p>
-        <i class="fa-solid fa-thumbs-up like fs-4"></i>
+        <i class="fa-solid fa-thumbs-up like fs-3"></i>
+        <i class="fa-solid fa-thumbs-down ms-3 hate fs-3"></i>
         <i class="fa-regular fa-message ms-3 fs-4"></i>
 
     </div>
-        {{-- <div>
-            <form action="" method="post">
-
-            </form>
-        </div> --}}
-
-
     @endforeach
-    {{-- @foreach ($comments as  $comment)
-
-        <div class="reply">
-                <p>{{ $comment->name }}</p>
-        </div>
-    @endforeach --}}
 </div>
 @endsection
 

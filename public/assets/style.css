@@ -58,5 +58,8 @@ html body{
     font-size: 14px;
 }
 .like.event{
-    color: rebeccapurple;
+    color: #07bc51;
+}
+.hate.event{
+    color: #ff6f6f;
 }

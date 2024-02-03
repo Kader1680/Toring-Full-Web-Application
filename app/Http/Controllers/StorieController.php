@@ -18,7 +18,7 @@ class StorieController extends Controller
         $stories = Story::all();
         $comments = Comments::all();
 
-        return view("allstories", compact('stories', 'comments', 'authStory'), ["stories" => $stories]);
+        return view("allstories", compact('stories', 'authStory'));
     }
 
 
