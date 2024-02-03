@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
             $table->string("title");
-            $table->string("content");
+            $table->text("content");
             $table->unsignedBigInteger('id_story');
             $table->foreign('id_story')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();

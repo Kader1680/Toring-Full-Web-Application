@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('LastName');
             $table->string('Address');
             $table->integer('mobile');
+            $table->string('confirm');
             $table->string('password');
             $table->timestamps();
         });

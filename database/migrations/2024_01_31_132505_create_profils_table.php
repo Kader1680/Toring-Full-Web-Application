@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('LastName');
             $table->string('Address');
             $table->integer("mobile");
+            $table->string('confirm');
+
             $table->unsignedBigInteger("user_id")->unique();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

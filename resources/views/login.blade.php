@@ -4,7 +4,7 @@
     <title>Tor | Login</title>
 </head>
 <div class="container login">
-    <form method="POST" action="{{ route("login") }}">
+    <form class="myform" method="POST" action="{{ route("login") }}">
         @csrf
        <h2 class="text-center fw-bolder mb-5">Welcome To Toring</h2>
 

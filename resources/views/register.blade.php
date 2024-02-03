@@ -3,7 +3,7 @@
 @section("content")
 
 <div class="container register">
-    <form method="POST" action="{{ route("register") }}">
+    <form class="myform" method="POST" action="{{ route("register") }}">
        <h2 class="text-center fw-bolder mb-5">Create Account</h2>
 
         @csrf
@@ -25,13 +25,16 @@
         <input  placeholder="Phone Number" type="number" class="form-control" name="mobile">
       </div>
       <div class="form-group">
-        <input  placeholder="Password" type="text" class="form-control" name="password">
+        <input  placeholder="Create Password" type="password" class="form-control" name="confirm">
+      </div>
+      <div class="form-group">
+        <input  placeholder="Confirm Password" type="password" class="form-control" name="password">
       </div>
       <div>
-        <button type="submit" class="btn p-3">Submit</button>
+        <button type="submit" class="btn p-3">Register</button>
 
       </div>
-      <div class="mt-3 fs-4"><a class="  reg" style="color: #ba54f5;" href="/">I Have Already</a></div>
+      <div class="mt-3 fs-4"><a class="  reg" style="color: #ba54f5;" href="/">I Have Already Account</a></div>
 
        </form>
   </div>
