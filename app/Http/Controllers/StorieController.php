@@ -13,12 +13,12 @@ class StorieController extends Controller
 {
 
     public function allStories(){
-        // $auth = Auth::user()->id;
-        // $authStory = Story::all()->where('id_story', $auth);
+        $auth = Auth::user()->id;
+        $authStory = Story::all()->where('id_story', $auth);
         $stories = Story::all();
         $comments = Comments::all();
 
-        return view("allstories", compact('stories', 'comments'));
+        return view("allstories", compact('stories', 'comments', 'authStory'), ["stories" => $stories]);
     }
 
 

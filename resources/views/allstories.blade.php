@@ -30,7 +30,8 @@
 
         <div class=" d-flex align-items-center justify-content-between">
             <h6 class=" fw-bolder">{{ $st->title }}</h6>
-            @auth
+
+            @if (Auth::user()->id == $st->id_story)
             <div class=" d-flex">
                 <a href="/stories/{{ $st->id }}">
                 <img class=" me-3" width="15" src="{{ asset("assets/images/edit.svg") }}" alt="">
@@ -39,11 +40,12 @@
                 <form action="{{ route("delete", ['id' => $st->id]) }}" method="POST">
                 @csrf
                 @method("DELETE")
-                <button class="border-0 bg-transparent" type="submit">                <img class=" me-3" width="15" src="{{ asset("assets/images/delete.svg") }}" alt="">
-                    </button>
+                <button class="border-0 bg-transparent" type="submit">
+                        <img class=" me-3" width="15" src="{{ asset("assets/images/delete.svg") }}" alt="">
+                </button>
                 </form>
             </div>
-            @endauth
+            @endif
 
         </div>
         <p>{{ $st->content }}</p>
