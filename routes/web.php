@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticateController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostStorieController;
 use App\Http\Controllers\ProfilController;
@@ -43,11 +44,10 @@ Route::post('/', [AuthenticateController::class, 'login'])->name("login");
 Route::get('/logout', [AuthenticateController::class, 'logout'])->name("logout");
 
 Route::get('/profil', [ProfilController::class, 'profil'])->middleware("auth");
+Route::get('/comment/{id}', [CommentController::class, 'getStory'])->middleware("auth");
+Route::post('/comment/{id}', [CommentController::class, 'addComment'])->middleware("auth")->name("comment");
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware("admin");
-// Route::get('/profil', [ProfilController::class, 'infoUser'])->middleware("auth");
-// Route::get('/a', function (){
-//     return view("404");
-// });
+Route::get('/allComments', [CommentController::class, 'allComment']);
 
 // Route::fallback(function () {
 //     return view('404');

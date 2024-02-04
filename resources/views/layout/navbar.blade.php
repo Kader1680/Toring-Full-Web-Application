@@ -16,6 +16,9 @@
           </li>
         @auth
         <li class="nav-item">
+            <a class="nav-link  text-dark fs-4 fw-bolder me-lg-3" href="/allComments"><i class="fa-solid fa-comment text-black"></i> your Comments </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link  text-dark fs-4 fw-bolder me-lg-3" href="/profil"><i class="fa-solid fa-user text-black"></i> Profil </a>
         </li>
         <li class="nav-item">

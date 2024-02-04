@@ -8,6 +8,7 @@ use App\Models\Story;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class StorieController extends Controller
 {
@@ -17,8 +18,8 @@ class StorieController extends Controller
         $authStory = Story::all()->where('id_story', $auth);
         $stories = Story::all();
         $comments = Comments::all();
-
-        return view("allstories", compact('stories', 'authStory'));
+        // dd($comments);
+        return view("allstories" ,compact('stories', 'authStory', 'comments'));
     }
 
 

@@ -17,7 +17,11 @@
     background-color: white;
     padding: 9px;
     margin-left: 4rem;
+
 }
+/* .reply.aze{
+    display: block;
+} */
 </style>
 @extends("layout.master")
 @section("content")
@@ -51,9 +55,15 @@
         <p>{{ $st->content }}</p>
         <i class="fa-solid fa-thumbs-up like fs-3"></i>
         <i class="fa-solid fa-thumbs-down ms-3 hate fs-3"></i>
-        <i class="fa-regular fa-message ms-3 fs-4"></i>
+        <a href="/comment/{{ $st->id }}"><i class="fa-regular fa-message ms-3 fs-4 replyIcon"></i></a>
+       @foreach ($comments as $comment )
+       @if ($st->id == $comment->id_comment)
+            <div class="reply">{{ $comment->name }}</div>
+       @endif
+       @endforeach
 
     </div>
+
     @endforeach
 </div>
 @endsection
