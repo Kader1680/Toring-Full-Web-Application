@@ -18,7 +18,6 @@ class StorieController extends Controller
         $authStory = Story::all()->where('id_story', $auth);
         $stories = Story::all();
         $comments = Comments::all();
-        // dd($comments);
         return view("allstories" ,compact('stories', 'authStory', 'comments'));
     }
 

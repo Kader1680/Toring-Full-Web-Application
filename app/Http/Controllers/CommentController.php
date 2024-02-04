@@ -33,20 +33,6 @@ class CommentController extends Controller
 
 
 
-        // $data = [
-        //     'name' => $request->name,
-        //     'id_comment' => $storyId,
-
-        // ];
-        // try {
-        //     Story::create($data);
-        //     return redirect()->route("stories");
-        // } catch (\Exception $e) {
-        //     return response()->json(['success' => false, 'message' => $e->getMessage()]);
-        // }
-
-
-
 
 
     }

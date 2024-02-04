@@ -15,14 +15,14 @@
     <form class="myform" method="POST" action="{{ route("create") }}">
             @csrf
         <div class="form-group">
-            <label for="name">Title :</label>
+            <label for="name">Question :</label>
             <input placeholder="Enter Story Title"  type="text" class="form-control" name="title">
         </div>
         <div class="form-group">
             <label for="dob">Content :</label>
             <textarea placeholder="Enter Story Content" type="text" class=" pt-4 form-control"  name="content"></textarea>
         </div>
-        <button type="submit" class="btn p-3 text-white">Create New Story</button>
+        <button type="submit" class="btn p-3 text-white">Create New Question</button>
     </form>
 </div>
 

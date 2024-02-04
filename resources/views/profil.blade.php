@@ -53,7 +53,7 @@
     </div>
 
     <div class="col-sm-12 col-md-9 bg-white allStories" >
-        <div><h4 class="mt-5 mb-5 fw-bolder">All Have  ({{ $data->count() }}) Stories </h4>
+        <div><h4 class="mt-5 mb-5 fw-bolder">All Have  ({{ $data->count() }}) Questions </h4>
         <span>
 
 
@@ -87,7 +87,7 @@
         </div>
         @endforeach
         @else
-          <div class="empty">you don't have any story</div>
+          <div class="empty">you don't have any Questions</div>
         @endif
     </div>
 </div>

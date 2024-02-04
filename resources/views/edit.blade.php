@@ -18,14 +18,14 @@
             @method("put")
 
             <div class="form-group">
-                <label for="name">Title :</label>
+                <label for="name">Question :</label>
                 <input placeholder="Enter Story Title" value="{{ $stories->title }}"  type="text" class="form-control" name="title">
             </div>
             <div class="form-group">
                 <label for="dob">Content :</label>
                 <input placeholder="Enter Story Content" value = "{{ $stories->content }}" type="text" class=" form-control"  name="content">
             </div>
-            <button type="submit" class="btn p-3 text-white">Edit</button>
+            <button type="submit" class="btn p-3 text-white">Edit Question</button>
         </form>
     </div>
 

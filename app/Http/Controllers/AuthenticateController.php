@@ -13,8 +13,8 @@ class AuthenticateController extends Controller
 {
     public function register(Request $request){
         $register = User::create($request->all());
-        if ($register) {
-            return redirect()->route("stories");
+        if ($register == true) {
+            return redirect()->route("profil");
         }
     }
 

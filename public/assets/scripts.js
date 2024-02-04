@@ -22,3 +22,10 @@ replyIcon.forEach(element => {
 
     })
 });
+
+
+const closeIcon = document.querySelector(".fa-close");
+const added = document.querySelector(".added");
+closeIcon.addEventListener("click", ()=>{
+    added.setAttribute("style", "visibility : hidden;")
+})

@@ -2,12 +2,16 @@
 <style>
 @media(max-width: 767px){
     .reply{
-        margin: 15px;
+        margin: 5px 15px;
 }
 }
 @media(min-width: 768px){
     .reply{
-    margin: 15px;
+    margin: 5px 0px;
+
+}
+.answers{
+    margin-left: 5rem;
 }
 }
 .reply{
@@ -19,9 +23,7 @@
     width: fit-content;
 
 }
-/* .reply.aze{
-    display: block;
-} */
+
 </style>
 @extends("layout.master")
 @section("content")
@@ -29,6 +31,13 @@
     <title>Toring | Profil</title>
 </head>
 <div class=" container">
+
+            {{-- @if (session("added"))
+            <div style="background-color: #07bc5262" class="text-white added p-3 fs-4 fw-bold rounded-3 mb-3 d-flex align-items-center justify-content-between">
+                {{ $added }}
+                <i class="fa-solid fa-close fs-3 text-dark"></i>
+            </div>
+            @endif --}}
     @foreach ($stories as $st )
     <div class="comments mb-3">
 
@@ -58,7 +67,10 @@
         <a class="text-dark " href="/comment/{{ $st->id }}"><i  class="fa-regular fa-comment ms-3 fs-4 replyIcon"></i></a>
         @foreach ($comments as $comment )
             @if ($st->id == $comment->id_comment)
-                    <div class="reply">{{ $comment->name }}</div>
+                    <div class="d-flex answers ">
+                        <i style="transform: rotate(90deg)" class="fa-solid fa-turn-up fs-3"></i>
+                        <div class="reply"> {{ $comment->name }}</div>
+                    </div>
             @endif
         @endforeach
 

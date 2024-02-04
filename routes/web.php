@@ -43,7 +43,7 @@ Route::get('/', [AuthenticateController::class, 'loginPage']);
 Route::post('/', [AuthenticateController::class, 'login'])->name("login");
 Route::get('/logout', [AuthenticateController::class, 'logout'])->name("logout");
 
-Route::get('/profil', [ProfilController::class, 'profil'])->middleware("auth");
+Route::get('/profil', [ProfilController::class, 'profil'])->middleware("auth")->name("profil");
 Route::get('/comment/{id}', [CommentController::class, 'getStory'])->middleware("auth");
 Route::post('/comment/{id}', [CommentController::class, 'addComment'])->middleware("auth")->name("comment");
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware("admin");

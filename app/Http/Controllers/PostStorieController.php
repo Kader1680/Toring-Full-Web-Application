@@ -22,7 +22,7 @@ class PostStorieController extends Controller
         ];
         try {
             Story::create($data);
-            return redirect()->route("stories");
+            return redirect()->route("stories")->with("added", 'story added succesfully');
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()]);
         }
@@ -33,11 +33,7 @@ class PostStorieController extends Controller
 
         return view("post");
     }
-    public function w(){
 
-
-        return view("welcome");
-    }
 }
 
 

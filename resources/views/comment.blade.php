@@ -12,10 +12,10 @@
 
 
             <div class="form-group">
-                <input placeholder="comment..."   type="text" class="form-control" name="name">
+                <input placeholder="Answer..."   type="text" class="form-control" name="name">
             </div>
 
-            <button type="submit" class="btn p-2 text-white">add comment</button>
+            <button type="submit" class="btn p-2 text-white">Add Answer</button>
         </form>
     </div>
 

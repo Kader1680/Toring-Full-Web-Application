@@ -7,16 +7,16 @@
       <div style="margin-top: -2rem" class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link text-dark fs-4 fw-bolder me-lg-3" aria-current="page" href="/stories">All Stories</a>
+            <a class="nav-link text-dark fs-4 fw-bolder me-lg-3" aria-current="page" href="/stories">All Questions</a>
           </li>
 
 
           <li class="nav-item">
-            <a class="nav-link text-dark  fs-4 fw-bolder me-lg-3" href="/post"><i class="fa-solid fa-add"></i> Add Story</a>
+            <a class="nav-link text-dark  fs-4 fw-bolder me-lg-3" href="/post"><i class="fa-solid fa-add"></i> Add Question</a>
           </li>
         @auth
         <li class="nav-item">
-            <a class="nav-link  text-dark fs-4 fw-bolder me-lg-3" href="/allComments"><i class="fa-solid fa-comment text-black"></i> your Comments </a>
+            <a class="nav-link  text-dark fs-4 fw-bolder me-lg-3" href="/allComments"><i class="fa-solid fa-comment text-black"></i> Your Answers </a>
         </li>
         <li class="nav-item">
             <a class="nav-link  text-dark fs-4 fw-bolder me-lg-3" href="/profil"><i class="fa-solid fa-user text-black"></i> Profil </a>

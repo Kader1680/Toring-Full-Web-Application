@@ -4,12 +4,8 @@
     <title>Toring | Comments</title>
 </head>
 <div class=" container">
-    @foreach ($comments as $comment )
-    <div class="comments mb-3">
-        {{ $comment->name }}
-    </div>
+    @if (Auth::user()->id)
 
-    @endforeach
-
+    @endif
 </div>
 @endsection
