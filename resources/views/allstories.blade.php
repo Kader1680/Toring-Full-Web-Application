@@ -2,21 +2,21 @@
 <style>
 @media(max-width: 767px){
     .reply{
-        width: 77%;
         margin: 15px;
 }
 }
 @media(min-width: 768px){
     .reply{
-    width: 50%;
     margin: 15px;
-
 }
 }
 .reply{
-    background-color: white;
+    background-color: #f1f1f1e0;
     padding: 9px;
     margin-left: 4rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+    width: fit-content;
 
 }
 /* .reply.aze{
@@ -55,12 +55,12 @@
         <p>{{ $st->content }}</p>
         <i class="fa-solid fa-thumbs-up like fs-3"></i>
         <i class="fa-solid fa-thumbs-down ms-3 hate fs-3"></i>
-        <a href="/comment/{{ $st->id }}"><i class="fa-regular fa-message ms-3 fs-4 replyIcon"></i></a>
-       @foreach ($comments as $comment )
-       @if ($st->id == $comment->id_comment)
-            <div class="reply">{{ $comment->name }}</div>
-       @endif
-       @endforeach
+        <a class="text-dark " href="/comment/{{ $st->id }}"><i  class="fa-regular fa-comment ms-3 fs-4 replyIcon"></i></a>
+        @foreach ($comments as $comment )
+            @if ($st->id == $comment->id_comment)
+                    <div class="reply">{{ $comment->name }}</div>
+            @endif
+        @endforeach
 
     </div>
 
