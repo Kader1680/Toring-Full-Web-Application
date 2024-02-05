@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticateController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostStorieController;
@@ -48,7 +49,14 @@ Route::get('/comment/{id}', [CommentController::class, 'getStory'])->middleware(
 Route::post('/comment/{id}', [CommentController::class, 'addComment'])->middleware("auth")->name("comment");
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware("admin");
 Route::get('/allComments', [CommentController::class, 'allComment']);
+Route::get('/categorie/web', [CategoryController::class, 'webQuestions']);
+Route::get('/categorie/android', [CategoryController::class, 'andQuestions']);
+Route::get('/categorie/databases', [CategoryController::class, 'dbQuestions']);
+Route::get('/categorie/operting-system', [CategoryController::class, 'osQuestions']);
 
+// Route::get('/categorie/web', function (){
+//     return view("categories.web");
+// });
 // Route::fallback(function () {
 //     return view('404');
 // });

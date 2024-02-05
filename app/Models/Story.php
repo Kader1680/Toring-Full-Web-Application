@@ -13,11 +13,15 @@ class Story extends Model
         'title',
         'content',
         'id_story',
+        'id_category',
     ];
     public function user(){
         return $this->belongsTo(User::class);
     }
     public function comment(){
         return $this->hasMany(Comments::class);
+    }
+    public function categorie(){
+        return $this->belongsTo(Category::class);
     }
 }

@@ -4,8 +4,26 @@
     box-sizing: border-box;
 }
 html body{
-    background-color: #e1e1e1;
-    font-family: 'Dosis', sans-serif;
+    background-color: #f6fcfe;
+    font-family: 'Open Sans', sans-serif;
+    color: #4c4c4c;
+}
+nav{
+    background-color: #2a2241;
+    color: white;
+}
+.nav-item a{
+    color: white;
+}
+.nav-item a:hover{
+    color: #ff7d42;
+
+}
+.fa-bars{
+    color: white;
+}
+.fa-bars:hover{
+    color: #ff7d42;
 }
 .myform {
     min-width:300px;
@@ -25,7 +43,8 @@ html body{
     color:#444;
   }
  .myform button{
-      background-image: linear-gradient(to bottom left,#ff86ed,#ba54f5,#fc8ceb);
+      background-color:    #ff7d42;
+
       width: 100%;
       color: white;
       padding: 13px;
@@ -43,7 +62,7 @@ html body{
 }
 .comments h6{
     font-size: 2rem;
-    color: #ba54f5;
+    color: #ff7d42;
     font-family: 'Dosis', sans-serif;
 }
 .comments p{

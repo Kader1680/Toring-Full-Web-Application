@@ -11,19 +11,43 @@
 
 }
 .answers{
-    margin-left: 5rem;
+    margin-left: 2rem;
 }
 }
 .reply{
-    background-color: #f1f1f1e0;
-    padding: 9px;
+    background-color: #f1f6ffc2;
+    padding: 4px 7px;
     margin-left: 4rem;
-    border: 1px solid #e1e1e1;
-    border-radius: 6px;
+    border-radius: 5px;
     width: fit-content;
 
 }
+.countAnwser{
+    background-color: #ff7d42;
+    color: white;
+    padding: 9px;
+    border-radius: 2px;
+    width: 45px;
+    height: 41px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+.catigories{
 
+}
+.catigories .cat{
+    width: -webkit-fill-available;
+    background-color: #FF7D42;
+    padding: 4px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    margin: 3px 5px;
+
+}
 </style>
 @extends("layout.master")
 @section("content")
@@ -32,6 +56,13 @@
 </head>
 <div class=" container">
 
+    <div class="catigories d-md-flex justify-content-md-between mb-5">
+        <div class="cat"><a class=" text-decoration-none text-white" href="/categorie/web">Web Developement</a></div>
+        <div class="cat"><a class="text-decoration-none text-white" href=" /categorie/databases">Databases</a></div>
+        <div class="cat"><a class="text-decoration-none text-white" href=" /categorie/android">Andriod</a></div>
+        <div class="cat"><a class="text-decoration-none text-white" href="/categorie/operting-system">Operating System</a></div>
+        <div class="cat"><a class="text-decoration-none text-white" href=" ">Others</a></div>
+    </div>
             {{-- @if (session("added"))
             <div style="background-color: #07bc5262" class="text-white added p-3 fs-4 fw-bold rounded-3 mb-3 d-flex align-items-center justify-content-between">
                 {{ $added }}
@@ -42,7 +73,10 @@
     <div class="comments mb-3">
 
         <div class=" d-flex align-items-center justify-content-between">
-            <h6 class=" fw-bolder">{{ $st->title }}</h6>
+            <div class="d-flex align-items-center justify-content-between" >
+                <div class="countAnwser me-2">3</div>
+                <h5 class=" fs-3 fw-bolder">{{ $st->title }}</h5>
+            </div>
 
             @if (Auth::user()->id == $st->id_story)
             <div class=" d-flex">
@@ -68,7 +102,8 @@
         @foreach ($comments as $comment )
             @if ($st->id == $comment->id_comment)
                     <div class="d-flex answers ">
-                        <i style="transform: rotate(90deg)" class="fa-solid fa-turn-up fs-3"></i>
+
+                        {{-- <i style="transform: rotate(90deg)" class="fa-solid fa-turn-up fs-3"></i> --}}
                         <div class="reply"> {{ $comment->name }}</div>
                     </div>
             @endif
