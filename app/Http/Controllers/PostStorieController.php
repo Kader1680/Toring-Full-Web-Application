@@ -18,6 +18,7 @@ class PostStorieController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'id_story' => $id,
+            'id_category' => $request->input('option'),
 
         ];
         try {

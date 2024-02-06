@@ -8,9 +8,42 @@ html body{
     font-family: 'Open Sans', sans-serif;
     color: #4c4c4c;
 }
+
+@media(max-width:797px){
+    .collapse .navbar-nav .nav-item .categories{
+        width: 95%;
+
+    }
+
+}
+@media(min-width:798px){
+    .collapse .navbar-nav .nav-item .categories{
+        width: 400%;
+    }
+}
+
+@media(min-width:991px){
+    .collapse .navbar-nav .nav-item .categories{
+        width: 23rem;
+
+    }
+    .categories li a{
+        font-size: 18px;
+    }
+
+}
 nav{
     background-color: #2a2241;
     color: white;
+}
+.collapse .navbar-nav .nav-item .categories{
+    padding: 8px;
+
+}
+.collapse .navbar-nav .nav-item .categories li a{
+    background-color: #2a2241;
+    color: white;
+    text-decoration: none;
 }
 .nav-item a{
     color: white;

@@ -12,15 +12,30 @@
           </li>
 
 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fs-4 " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+              <ul style="background-color: #2a2241" class="dropdown-menu categories" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/categorie/web">Web Developement</a></li>
+                <li><a class="dropdown-item" href="/categorie/android">Android</a></li>
+                <li><a class="dropdown-item" href="/categorie/databases">Databases</a></li>
+                <li><a class="dropdown-item" href="/categorie/operting-system">Operting System</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Others</a></li>
+              </ul>
+
+          </li>
+
           <li class="nav-item">
-            <a class="nav-link   fs-4 fw-bolder me-lg-3" href="/post"><i class="fa-solid fa-add"></i> Add Question</a>
+            <a class="nav-link   fs-4 fw-bolder me-lg-3" href="/post"> Add Question</a>
           </li>
         @auth
         <li class="nav-item">
-            <a class="nav-link   fs-4 fw-bolder me-lg-3" href="/allComments"><i class="fa-solid fa-comment text-black"></i> Your Answers </a>
+            <a class="nav-link   fs-4 fw-bolder me-lg-3" href="/allComments"> Your Answers </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link fs-4 fw-bolder me-lg-3" href="/profil"><i class="fa-solid fa-user text-black"></i> Profil </a>
+            <a class="nav-link fs-4 fw-bolder me-lg-3" href="/profil">Profil </a>
         </li>
         <li class="nav-item">
             <a class="nav-link   fs-4 fw-bolder me-lg-3" href="{{ route("logout") }}">Logout</a>
