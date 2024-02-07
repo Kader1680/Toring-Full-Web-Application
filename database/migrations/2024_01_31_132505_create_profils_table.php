@@ -11,15 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profils', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string('FirstName');
-            $table->string('LastName');
-            $table->string('Address');
-            $table->integer("mobile");
-            $table->string('confirm');
-
+            $table->text("image");
             $table->unsignedBigInteger("user_id")->unique();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

@@ -10,7 +10,7 @@
 <head>
     <title>Toring | Categories</title>
 </head>
-<div class=" container">
+<div class="container container">
 
     <div class="row mb-5">
         <div class="catg col-md-6 fs-3 fw-bolder pt-5  "><a class=" text-decoration-none text-white" href="/categorie/web">Web Developement</a></div>

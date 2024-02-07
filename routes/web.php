@@ -53,6 +53,7 @@ Route::get('/categorie/web', [CategoryController::class, 'webQuestions']);
 Route::get('/categorie/android', [CategoryController::class, 'andQuestions']);
 Route::get('/categorie/databases', [CategoryController::class, 'dbQuestions']);
 Route::get('/categorie/operting-system', [CategoryController::class, 'osQuestions']);
+Route::post('/profil', [ProfilController::class, 'addImage']);
 
 Route::get('/categories', function (){
     return view("Categories");

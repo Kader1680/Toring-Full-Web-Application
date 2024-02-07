@@ -25,6 +25,49 @@
 
         }
     }
+
+    .custom__form input {
+  opacity: 0;
+  height: 0;
+}
+.custom__image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.custom__image-container label {
+background-image: url("https://w7.pngwing.com/pngs/529/816/png-transparent-computer-icons-user-profile-avatar-heroes-monochrome-black-thumbnail.png");
+    background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100%;
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  border: solid 1px black;
+  border-radius: 5px;
+  background-size: cover;
+  position: relative;
+}
+
+.custom__image-container img {
+background-image: url("https://w7.pngwing.com/pngs/529/816/png-transparent-computer-icons-user-profile-avatar-heroes-monochrome-black-thumbnail.png");
+
+  border: solid 1px black;
+  border-radius: 5px;
+  object-fit: cover;
+  background-size: cover;
+}
+
+.photo{
+    top: 14px;
+    position: absolute;
+    height: 235px;
+    width: 200px;
+    z-index: 5;
+}
     </style>
     <head>
         <title>Toring | Profil</title>
@@ -36,7 +79,42 @@
 <div class="row">
     <div class="col-sm-12 col-md-3 bg-gray-100">
         <div style="border-radius: 6px" class=" p-4 bg-white  border d-flex align-items-center justify-content-center">
-            <img class="" width="100" height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1200px-User_icon_2.svg.png" alt="">
+
+
+            <form action="" method="POST" class="custom__form" enctype="multipart/form-data">
+               @csrf
+                <div class="custom__image-container">
+                  <label id="add-img-label" for="add-single-img">+</label>
+                  <input name="image" type="file" id="add-single-img" />
+                </div>
+                @foreach ($imageProfil as $images)
+                {{-- <p>{{ "$images->images" }}</p> --}}
+
+                <img class="photo" width="100" height="100" src="{{asset('assets/images/profils'). '/' .$images->image}}"/>
+
+
+                @endforeach
+                <div class="form__controls"><button type="submit">Submit</button></div>
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {{-- <img class="" width="100" height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1200px-User_icon_2.svg.png" alt=""> --}}
         </div>
         <div style="border-radius: 6px" class="border mt-4 bg-white p-3 ">
             @foreach ($userInfo as $user)

@@ -55,18 +55,15 @@
     }
     </style>
 
-<div>
-    <h1>Welcome To Web Develepement </h1>
+<div class="container">
+    <h1 class="text-center m-5">Welcome To Web Develepement </h1>
 
 
     @foreach ($questions as $qst )
     <div class="comments mb-3">
 
         <div class=" d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center justify-content-between" >
-                <div class="countAnwser me-2">3</div>
-                <h5 class=" fs-3 fw-bolder">{{ $qst->title }}</h5>
-            </div>
+            <h5 style="color: #FF7D42" class=" fs-3 fw-bolder">{{ $qst->title }}</h5>
 
         </div>
         <p>{{ $qst->content }}</p>
