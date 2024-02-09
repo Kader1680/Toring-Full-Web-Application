@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('mobile');
             $table->string('confirm');
             $table->string('password');
+            $table->string('social_id')->nullable();
+            $table->string('social_type')->nullable();
             $table->timestamps();
         });
     }

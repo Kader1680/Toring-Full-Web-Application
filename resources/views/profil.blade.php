@@ -4,7 +4,7 @@
     .empty{
         background-color: #e1e1e1;
     padding: 26px;
-    color: red;
+
     font-size: 2.5rem;
     text-align: center;
     font-weight: 400;
@@ -35,31 +35,6 @@
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-.custom__image-container label {
-background-image: url("https://w7.pngwing.com/pngs/529/816/png-transparent-computer-icons-user-profile-avatar-heroes-monochrome-black-thumbnail.png");
-    background-repeat: no-repeat;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 100%;
-  cursor: pointer;
-  width: 200px;
-  height: 200px;
-  border: solid 1px black;
-  border-radius: 5px;
-  background-size: cover;
-  position: relative;
-}
-
-.custom__image-container img {
-background-image: url("https://w7.pngwing.com/pngs/529/816/png-transparent-computer-icons-user-profile-avatar-heroes-monochrome-black-thumbnail.png");
-
-  border: solid 1px black;
-  border-radius: 5px;
-  object-fit: cover;
-  background-size: cover;
-}
 
 .photo{
     top: 14px;
@@ -67,6 +42,9 @@ background-image: url("https://w7.pngwing.com/pngs/529/816/png-transparent-compu
     height: 235px;
     width: 200px;
     z-index: 5;
+}
+.submit{
+
 }
     </style>
     <head>
@@ -84,7 +62,7 @@ background-image: url("https://w7.pngwing.com/pngs/529/816/png-transparent-compu
             <form action="" method="POST" class="custom__form" enctype="multipart/form-data">
                @csrf
                 <div class="custom__image-container">
-                  <label id="add-img-label" for="add-single-img">+</label>
+                  <label id="add-img-label" for="add-single-img"><p class="text-black bg-white p-2" >Add Image</p></label>
                   <input name="image" type="file" id="add-single-img" />
                 </div>
                 @foreach ($imageProfil as $images)
@@ -94,7 +72,7 @@ background-image: url("https://w7.pngwing.com/pngs/529/816/png-transparent-compu
 
 
                 @endforeach
-                <div class="form__controls"><button type="submit">Submit</button></div>
+                <div class="form__controls"><button class="submit" type="submit">Submit</button></div>
             </form>
 
 
@@ -141,10 +119,10 @@ background-image: url("https://w7.pngwing.com/pngs/529/816/png-transparent-compu
         @foreach ( $data as $dt)
 
         <div>
-            <div style="background-color: #f8b2ed4a" class="comments mb-3">
+            <div style="background-color: #f1f2f5;" class="comments mb-3">
 
                 <div class=" d-flex align-items-center justify-content-between">
-                    <h6 class=" fw-bolder">{{ $dt->title }}</h6>
+                    <h6 style="color: #2a2241" class=" fw-bolder">{{ $dt->title }}</h6>
                     <div class=" d-flex">
                         <a href="/stories/{{ $dt->id }}">
                             <img class=" me-3" width="15" src="{{ asset("assets/images/edit.svg") }}" alt="">

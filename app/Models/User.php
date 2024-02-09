@@ -26,6 +26,8 @@ class User extends Authenticatable
         'mobile',
         'confirm',
         'password',
+        'social_id',
+        'social_type',
     ];
 
     /**

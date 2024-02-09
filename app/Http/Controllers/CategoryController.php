@@ -33,4 +33,12 @@ class CategoryController extends Controller
         $questions = Story::all()->where("id_category", 4);
         return view("categories.os", compact('questions'));
     }
+
+
+    public function otherQuestions(){
+
+        // $Category = Category::all()->w;
+        $questions = Story::all()->where("id_category", 5);
+        return view("categories.others", compact('questions'));
+    }
 }

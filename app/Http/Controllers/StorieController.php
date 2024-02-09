@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
+use function PHPSTORM_META\type;
+
 class StorieController extends Controller
 {
 
@@ -18,10 +20,28 @@ class StorieController extends Controller
         $authStory = Story::all()->where('id_story', $auth);
         $stories = Story::all();
         $comments = Comments::all();
-        foreach ($comments as $com ) {
+        $idStory = Story::select('id_story')->get();
+        // dd(gettype($idStory));
+       foreach ($idStory as $id) {
+        // dd(gettype($id->id_story));
+        $name = User::all()->where('id', $id->id_story);
 
-        }
-        return view("allstories" ,compact('stories', 'authStory', 'comments'));
+       }
+
+        return view("allstories" ,compact('stories', 'authStory', 'comments', 'name'));
+    }
+    public function questionId($id){
+        $question = Story::find($id);
+        $stories = Story::all();
+        $comments = Comments::all();
+        $idStory = Story::select('id_story')->get();
+        // dd(gettype($idStory));
+       foreach ($idStory as $id) {
+        // dd(gettype($id->id_story));
+        $name = User::all()->where('id', $id->id_story);
+
+       }
+        return view('question' ,compact('question', 'comments'));
     }
 
 

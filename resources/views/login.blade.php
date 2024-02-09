@@ -1,5 +1,25 @@
 @extends("layout.master")
 @section("content")
+
+<style>
+    .google{
+        font-size: 1.5rem;
+        background-color: #d30505bf;
+        padding: 1rem;
+        text-align: center;
+        font-weight: 700;
+        color: white;
+    }
+    .facebook{
+        font-size: 1.5rem;
+        background-color: #051ad3bf;
+        padding: 1rem;
+        text-align: center;
+        font-weight: 700;
+        color: white;
+        margin: 10px 0;
+    }
+</style>
 <head>
     <title>Tor | Login</title>
 </head>
@@ -12,6 +32,8 @@
        <div class="error">{{ $errors }}</div>
        @endif
 
+       <div class="google"><a class=" text-decoration-none text-white" href="/auth/google">Google</a></div>
+       <div class="facebook"><a class=" text-decoration-none text-white" href="/auth/google">Facebook</a></div>
        <div class="form-group">
         <input placeholder="Enter Username" type="text" class="form-control" name="name">
       </div>
