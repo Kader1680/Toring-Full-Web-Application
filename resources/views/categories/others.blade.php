@@ -64,7 +64,7 @@
         <div class=" d-flex align-items-center justify-content-between">
             <a href="/questions/{{ $qst->id }}"><h5 class=" fs-3 fw-bolder">{{ $qst->title }}</h5></a>
         </div>
-        <p>{{ $qst->content }}</p>
+
     </div>
 
     @endforeach
