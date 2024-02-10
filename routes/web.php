@@ -49,33 +49,10 @@ Route::post('/profil', [ProfilController::class, 'addImage']);
 
 
 
-// Route::get('auth/google', [socialteController::class, 'redrectToGoogle']);
-// Route::get('auth/google/callback', [socialteController::class, 'handleGoogleCallback']);
+Route::get('auth/google', [socialteController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [socialteController::class, 'handleGoogleCallback']);
 
-
-// Route::get('/auth/google', [socialteController::class, 'redrectToGoogle']);
-// Route::get('/auth/google/callback', [socialteController::class, 'handelGoogleCallback']);
-// Route::post('/profil', [ProfilController::class, 'addImage']);
 
 Route::get('/home', function (){
     return view("home");
 });
-// Route::fallback(function () {
-//     return view('404');
-// });
-
-
-
-// Route::get('google',function(){
-
-//     Return view('googleAuth');
-
-// });
-
-
-// Route::get('/auth/google', [socialteController::class, 'redirectToGoogle']);
-// Route::get('/auth/google/callback', [socialteController::class, 'handleGoogleCallback']);
-
-// Route::get('auth/google', 'AuthLoginController@redirectToGoogle');
-
-// Route::get('auth/google/callback', 'AuthLoginController@handleGoogleCallback');

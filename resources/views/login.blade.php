@@ -32,8 +32,8 @@
        <div class="error">{{ $errors }}</div>
        @endif
 
-       <div class="google"><a class=" text-decoration-none text-white" href="/auth/google">Google</a></div>
-       <div class="facebook"><a class=" text-decoration-none text-white" href="/auth/google">Facebook</a></div>
+       <div class="google"><a class=" text-decoration-none text-white" href="/auth/google">Login With Google</a></div>
+       <div class="facebook"><a class=" text-decoration-none text-white" href="/auth/google">Login With Facebook</a></div>
        <div class="form-group">
         <input placeholder="Enter Username" type="text" class="form-control" name="name">
       </div>
