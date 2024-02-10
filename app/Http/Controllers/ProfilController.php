@@ -7,6 +7,7 @@ use App\Models\Story;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProfilController extends Controller
 {
@@ -23,13 +24,6 @@ class ProfilController extends Controller
         }
         return view("profil", compact('data','imageProfil'), compact('userInfo'), ["userInfo" => $userInfo]);
     }
-
-
-    // public function getImage(){
-    //     $id = Auth::user()->id;
-
-    //         return view("profil", compact("imageProfil"));
-    //     }
 
     public function addImage(Request $request){
 

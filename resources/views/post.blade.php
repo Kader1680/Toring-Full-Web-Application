@@ -22,14 +22,16 @@
             <label for="dob">Content :</label>
             <textarea placeholder="Enter Story Content" type="text" class=" pt-4 form-control"  name="content"></textarea>
         </div>
-        <select name="option" class="form-select" aria-label="Default select example">
+       <div class="mb-4">
+        <select  name="option" class="form-select" aria-label="Default select example">
             {{-- <option >Choose Categories</option> --}}
             <option selected value="1">Web Developement</option>
             <option value="2">Android</option>
             <option value="3">Databases</option>
             <option value="4">Operating Systems</option>
             <option value="5">Other</option>
-          </select>
+        </select>
+       </div>
         <button type="submit" class="btn p-3 text-white">Create New Question</button>
     </form>
 </div>

@@ -22,9 +22,34 @@
         margin-top: 1rem;
         padding-bottom: 2rem;
         border-radius: 6px;
+        }
 
+        .photo{
+            height: 300px;
+            width: 259px;
         }
     }
+
+    @media(min-width:768px){
+        .photo{
+            height: 235px;
+            width: 200px;
+        }
+    }
+
+    @media(min-width:991px){
+        .photo{
+            height: 243px;
+            width: 200px;
+        }
+    }
+    @media(min-width:1200px){
+        .photo{
+            height: 235px;
+            width: 200px;
+        }
+    }
+
 
     .custom__form input {
   opacity: 0;
@@ -39,8 +64,6 @@
 .photo{
     top: 14px;
     position: absolute;
-    height: 235px;
-    width: 200px;
     z-index: 5;
 }
 .submit{
@@ -125,13 +148,13 @@
                     <h6 style="color: #2a2241" class=" fw-bolder">{{ $dt->title }}</h6>
                     <div class=" d-flex">
                         <a href="/stories/{{ $dt->id }}">
-                            <img class=" me-3" width="15" src="{{ asset("assets/images/edit.svg") }}" alt="">
+                            <img class=" me-3" width="15" src="{{ asset("assets/images/edit.png") }}" alt="">
                         </a>
                         <form action="{{ route("delete", ['id' => $dt->id]) }}" method="POST">
                         @csrf
                         @method("DELETE")
                         <button class="border-0 bg-transparent" type="submit">
-                            <img class=" me-3" width="15" src="{{ asset("assets/images/delete.svg") }}" alt="">
+                            <img class=" me-3" width="15" src="{{ asset("assets/images/delete.png") }}" alt="">
                         </button>
                         </form>
                     </div>

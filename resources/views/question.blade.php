@@ -48,13 +48,12 @@
         margin: 3px 5px;
     }
     .opt{
-
-        padding: 5px 15px;
+        padding: 3px 8px;
         width: fit-content;
         background-color: F1F2F5;
         text-align: center;
-        margin: 0px 10px;
-        border-radius:5px;
+        margin: 0px 2px;
+        border-radius: 5px;
     }
 
     .form-select{

@@ -49,12 +49,12 @@
 }
 .opt{
 
-    padding: 5px 15px;
+    padding: 3px 8px;
     width: fit-content;
     background-color: F1F2F5;
     text-align: center;
-    margin: 0px 10px;
-    border-radius:5px;
+    margin: 0px 2px;
+    border-radius: 5px;
 }
 
 .form-select{
@@ -94,22 +94,18 @@
             <div class="d-flex align-items-center justify-content-between" >
                 {{-- <div class="countAnwser me-2">3</div> --}}
                 <h5 class=" fs-4 fw-bolder">{{ $st->title }}</h5>
-
-                @foreach ($name as $n)
-                {{ $n->name }}
-                @endforeach
             </div>
 
             @if (Auth::user()->id == $st->id_story)
             <div class=" d-flex">
                 <a href="/stories/{{ $st->id }}">
-                <img class=" me-3" width="15" src="{{ asset("assets/images/edit.svg") }}" alt="">
+                <img class=" me-3" width="15" src="{{ asset("assets/images/edit.png") }}" alt="">
                 </a>
                 <form action="{{ route("delete", ['id' => $st->id]) }}" method="POST">
                 @csrf
                 @method("DELETE")
                 <button class="border-0 bg-transparent" type="submit">
-                        <img class=" me-3" width="15" src="{{ asset("assets/images/delete.svg") }}" alt="">
+                        <img class=" me-3" width="15" src="{{ asset("assets/images/delete.png") }}" alt="">
                 </button>
                 </form>
             </div>

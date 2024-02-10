@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg   rounded-0 p-lg-0">
-    <div class="container-fluid">
-      <a class="navbar-brand fs-2 fw-bolder" href="/stories"><img width="70" height="80" src="{{ asset("assets/images/logo.png") }}" alt="" srcset=""></a>
+<nav class="navbar navbar-expand-lg rounded-0 p-lg-0">
+    <div class=" container-fluid container-md ">
+      <a class="navbar-brand fs-2 fw-bolder" href="/stories"><img width="70" height="80" src="{{ asset("assets/images/log.png") }}" alt="" srcset=""></a>
       <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         {{-- <span class="navbar-toggler-icon "></span> --}}
         <i class="fa-solid fa-bars fs-1 bars "></i>
@@ -12,7 +12,7 @@
             <a class="nav-link   fs-4 fw-bolder me-lg-3" aria-current="page" href="/home">Home</a>
         </li>
           <li class="nav-item">
-            <a class="nav-link   fs-4 fw-bolder me-lg-3" aria-current="page" href="/post">All Questions</a>
+            <a class="nav-link   fs-4 fw-bolder me-lg-3" aria-current="page" href="/stories">All Questions</a>
           </li>
 
 
@@ -35,11 +35,12 @@
             <a class="nav-link   fs-4 fw-bolder me-lg-3" href="/post"> Add Question</a>
           </li>
         @auth
+
+{{-- style="border: 2px solide white" --}}
+
+
         <li class="nav-item">
-            <a class="nav-link   fs-4 fw-bolder me-lg-3" href="/allComments"> Your Answers </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link fs-4 fw-bolder me-lg-3" href="/profil">Profil </a>
+            <a class="nav-link fs-4 fw-bolder me-lg-3" href="/profil"><img  width="20" src="{{ asset('assets/images/anonym.png') }}" alt=""> </a>
         </li>
         <li class="nav-item">
             <a class="nav-link   fs-4 fw-bolder me-lg-3" href="{{ route("logout") }}">Logout</a>

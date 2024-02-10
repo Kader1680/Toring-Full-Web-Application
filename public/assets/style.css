@@ -72,6 +72,8 @@ nav{
     color: #ff7d42;
 }
 .myform {
+    font-family: 'Open Sans', sans-serif;
+
     min-width:300px;
     max-width:400px;
     padding:20px;

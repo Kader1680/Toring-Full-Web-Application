@@ -29,3 +29,11 @@ const added = document.querySelector(".added");
 closeIcon.addEventListener("click", ()=>{
     added.setAttribute("style", "visibility : hidden;")
 })
+
+
+var result = document.getElementById("result")
+
+for (var nbr = 0; nbr < 30; nbr++) {
+    result.innerHTML += `10 * ${nbr} = ${nbr * 10} `
+
+}
