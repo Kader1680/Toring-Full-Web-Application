@@ -51,4 +51,38 @@ class socialteController extends Controller
     }
 
 
+
+    public function redirectToFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function handleFacebookCallback()
+    {
+        $facebookUser = Socialite::driver('facebook')->user();
+
+        $user = User::where('email', $facebookUser->email)->first();
+
+        if (!$user) {
+            // Create a new user if not exists
+            $user = new User();
+            $user->name = $facebookUser->name;
+            $user->email = $facebookUser->email;
+            $user->google_id = $facebookUser->getId();
+            $user->FirstName  = "unknow";
+            $user->LastName  = "unknow";
+            $user->confirm  = "unknow";
+            $user->password  = "unknow";
+            $user->mobile = 0000000;
+            $user->save();
+        }
+
+        // Login the user
+        Auth::login($user);
+
+        // Redirect to home page or wherever you want
+        return redirect('/home');
+    }
+
+
 }

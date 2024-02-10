@@ -53,6 +53,12 @@ Route::get('auth/google', [socialteController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [socialteController::class, 'handleGoogleCallback']);
 
 
+
+Route::get('/auth/facebook', [socialteController::class, 'redirectToFacebook']);
+Route::get('/auth/facebook/callback', [socialteController::class, 'handleFacebookCallback']);
+
+
+
 Route::get('/home', function (){
     return view("home");
 });
