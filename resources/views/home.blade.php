@@ -5,56 +5,10 @@
 </head>
 <style>
 
-.bg h2{
-        display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 5rem;
-    }
-    .bg img{
-        width: 100%;
-        height: 40rem;
-    }
-    .box{
-        color: #2a2241;
-        position: relative;
-        margin: 15px 0;
-        padding: 5rem;
-        box-shadow: 2px 2px 10px 4px #80808069;
-    }
-    .box h3{
-        color: #FF7D42;
-        font-weight:400;
-        margin-bottom: 2rem;
-        font-size:25px;
 
-    }
-    .box p{
-        font-size: 14px;
-    }
-    .box img{
-        border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -246%);
-    height: 73px;
-    width: 73px;
-    border: 1px solid #2a2241;
-    }
-
-    @media(min-width:767px){
-        .box{
-        margin: 15px 1%;
-        width: 31%;
-    }
-    }
 </style>
 
-<div class="container">
+<div class="container"  style="margin-bottom: 8rem">
     <div class="bg position-relative">
         <h2  class="text-center fw-bolder position-absolute z-10  text-white">Welcome To Toring Site To Anwser Question you want <br></h2>
 

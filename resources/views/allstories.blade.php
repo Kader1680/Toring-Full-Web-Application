@@ -71,7 +71,7 @@
 <head>
     <title>Toring | Questions</title>
 </head>
-<div class=" container">
+<div style="margin-bottom: 7rem" class=" container">
 
     <div class="catigories d-md-flex justify-content-md-between mb-5">
         <div class="cat"><a class=" text-decoration-none text-white" href="/categorie/web">Web Developement</a></div>
@@ -80,12 +80,7 @@
         <div class="cat"><a class="text-decoration-none text-white" href="/categorie/operting-system">Operating System</a></div>
         <div class="cat"><a class="text-decoration-none text-white" href="/categorie/others ">Others</a></div>
     </div>
-{{--
-    <select class="text-white w-100 mb-5" style="background-color: #2a2241; color:white; padding:10px; font-size:14px;" class="form-select mb-5 filter" aria-label="Default select example">
-        <option style="padding: 20px"  selected value="1">Most Anwser</option>
-        <option value="2">Low Answer</option>
-        <option value="3">No Anwser </option>
-    </select> --}}
+
 
     @foreach ($stories as $st )
     <div class="comments mb-3">
@@ -123,7 +118,7 @@
                     <div class="d-flex answers ">
 
 
-                        <div class="reply"> {{ $comment->name }}</div>
+                        <div class="reply">  {{ $comment->name }}</div>
                     </div>
             @endif
         @endforeach

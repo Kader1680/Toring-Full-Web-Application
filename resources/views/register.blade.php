@@ -10,8 +10,8 @@
 
 
        <h2 class="text-center fw-bolder mb-5">Create Account</h2>
-       <div class="google"><a class=" text-decoration-none text-white" href="/auth/google"><img width="25" class="me-3"  src="https://cdn.iconscout.com/icon/free/png-256/free-google-1772223-1507807.png" alt="">Login With Google</a></div>
-       <div class="facebook"><a class=" text-decoration-none text-white" href="/auth/facebook"><img width="25" class="me-3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png" alt="">Login With Facebook</a></div>
+
+       <div class="google mb-3"><a class=" text-decoration-none text-white" href="/auth/google"><img width="25" class="me-3"  src="https://cdn3d.iconscout.com/3d/free/thumb/free-google-9185438-7516836.png" alt="">Login With Google</a></div>
         @csrf
        <div class="row">
             <div class="form-group col-6">

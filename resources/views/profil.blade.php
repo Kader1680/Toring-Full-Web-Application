@@ -75,7 +75,7 @@
     </head>
 @extends("layout.master")
 @section("content")
-<div class=" container">
+<div class=" container"  style="margin-bottom: 8rem">
 
 <div class="row">
     <div class="col-sm-12 col-md-3 bg-gray-100">

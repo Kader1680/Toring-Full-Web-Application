@@ -6,11 +6,11 @@
     }
 </style>
 
-<footer>
+<footer style="width: 100%; bottom:0;" class=" position-fixed ">
 
 
     <div class="container p-4">
-        <div class="row">
+        <div class="row text-center">
             <div class="col-md-6"> Created By <a   target="blank" href="https://abdelkaderouldhennia.vercel.app/">Abdelkdaer Ould Hennia</a>
 
             </div>

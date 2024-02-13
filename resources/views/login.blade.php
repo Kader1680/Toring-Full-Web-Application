@@ -14,8 +14,9 @@
        <div class="error">{{ $errors }}</div>
        @endif
 
-       <div class="google"><a class=" text-decoration-none text-white" href="/auth/google">Login With Google</a></div>
-       <div class="facebook"><a class=" text-decoration-none text-white" href="/auth/facebook">Login With Facebook</a></div>
+       <div class="google mb-3"><a class=" text-decoration-none text-white" href="/auth/google"><img width="25" class="me-3"  src="https://cdn3d.iconscout.com/3d/free/thumb/free-google-9185438-7516836.png" alt="">Login With Google</a></div>
+
+       {{-- <div class="facebook"><a class=" text-decoration-none text-white" href="/auth/facebook">Login With Facebook</a></div> --}}
        <div class="form-group">
         <input placeholder="Enter Username" type="text" class="form-control" name="name">
       </div>
