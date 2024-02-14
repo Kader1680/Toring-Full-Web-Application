@@ -13,6 +13,10 @@
 
        <div class="google mb-3"><a class=" text-decoration-none text-white" href="/auth/google"><img width="25" class="me-3"  src="https://cdn3d.iconscout.com/3d/free/thumb/free-google-9185438-7516836.png" alt="">Login With Google</a></div>
         @csrf
+
+       @if (session("errors"))
+            <div class="error">{{ $errors }}</div>
+       @endif
        <div class="row">
             <div class="form-group col-6">
                 <input placeholder="First Name" type="text" class="form-control" name="FirstName">
@@ -21,8 +25,10 @@
                 <input placeholder="Last Name" type="text" class="form-control" name="LastName">
             </div>
        </div>
+
+
       <div class="form-group">
-        <input placeholder="Address Email" type="text" class="form-control" name="Address">
+        <input placeholder="Address Email" type="text" class="form-control" name="email">
       </div>
       <div class="form-group">
         <input  placeholder="Username" type="text" class="form-control" name="name">

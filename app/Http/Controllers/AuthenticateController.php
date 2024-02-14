@@ -4,18 +4,36 @@ namespace App\Http\Controllers;
 
 use App\Models\Profile;
 use App\Models\User;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 use function PHPUnit\Framework\returnValue;
 
 class AuthenticateController extends Controller
 {
     public function register(Request $request){
-        $register = User::create($request->all());
-        if ($register == true) {
-            return redirect()->route("profil");
+        // Validator
+        // $allRequest = $request->all();
+
+        $valditor = Validator::make($request->all(), [
+            'FirstName' => ['required', 'max:22', 'string'],
+            'LastName' => ['required', 'max:22', 'string'],
+            'email' => ['required', 'email', 'string'],
+            'mobile' => ['required'],
+            'name' => ['required'],
+            'confirm' => ['required'],
+            'password' => ['required'],
+        ]);
+        if ($valditor->fails()) {
+            return redirect()->back()->with(['errors' => 'Some Failed Are Empty Please Try To Put All Information']);
         }
+        $register = User::create($request->all());
+        return redirect()->route("profil");
+
+
+
     }
 
     public function registerPage(Request $request){

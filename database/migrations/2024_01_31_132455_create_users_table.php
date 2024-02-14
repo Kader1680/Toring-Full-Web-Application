@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('mobile');
             $table->string('confirm');
-            $table->string('password')->nullable();;
-            $table->string('google_id')->nullable();
+            $table->string('password')->nullable();
+            $table->string('google_id')->nullable()->default(null);
             $table->timestamps();
         });
     }
