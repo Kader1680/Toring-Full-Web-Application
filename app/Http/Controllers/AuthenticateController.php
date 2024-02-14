@@ -14,13 +14,11 @@ use function PHPUnit\Framework\returnValue;
 class AuthenticateController extends Controller
 {
     public function register(Request $request){
-        // Validator
-        // $allRequest = $request->all();
 
         $valditor = Validator::make($request->all(), [
-            'FirstName' => ['required', 'max:22', 'string'],
-            'LastName' => ['required', 'max:22', 'string'],
-            'email' => ['required', 'email', 'string'],
+            'FirstName' => ['required'],
+            'LastName' => ['required'],
+            'email' => ['required'],
             'mobile' => ['required'],
             'name' => ['required'],
             'confirm' => ['required'],
@@ -29,8 +27,10 @@ class AuthenticateController extends Controller
         if ($valditor->fails()) {
             return redirect()->back()->with(['errors' => 'Some Failed Are Empty Please Try To Put All Information']);
         }
+
         $register = User::create($request->all());
         return redirect()->route("profil");
+
 
 
 
