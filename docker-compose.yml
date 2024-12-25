@@ -1,0 +1,12 @@
+version: '3.8'
+
+# define services ==> [backend or app + databaase]
+
+services:
+    app:
+        image: php:8.2-apache 
+        container_name : toring_backend
+        port: 
+           - 8000:80
+        volumes: 
+           - ./:/toring
