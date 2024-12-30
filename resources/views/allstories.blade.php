@@ -109,7 +109,20 @@
         </div>
         <p>{{ $st->content }}</p>
         <div class="d-flex align-items-center ">
-            <div class="opt"><i class="fa-solid fa-thumbs-up like fs-3"></i></div>
+            
+            
+            <div class="opt">
+                <i class="fa-solid fa-thumbs-up like fs-3"></i>
+                {{-- <form action="{{ route("stories", ['id_post' => $st->id]) }}" method="GET">
+                    @csrf
+                    @method("GET")
+                    <button class="border-0 bg-transparent" type="submit">
+                            Like
+                    </button>
+                </form> --}}
+                
+            
+            </div>
             <div class="opt"><i class="fa-solid fa-thumbs-down ms-3 hate fs-3"></i></div>
             <div class="opt"><a class="text-dark " href="/comment/{{ $st->id }}"><i  class="fa-regular fa-comment ms-3 fs-4 replyIcon"></i></a></div>
         </div>

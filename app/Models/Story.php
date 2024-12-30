@@ -24,4 +24,8 @@ class Story extends Model
     public function categorie(){
         return $this->belongsTo(Category::class);
     }
+
+    public function likes(){
+        return $this->belongsToMany(User::class, 'likes', 'id_post', 'id_user');
+    }
 }

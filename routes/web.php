@@ -6,12 +6,17 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostStorieController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\ReactionsController;
 use App\Http\Controllers\socialteController;
 use App\Http\Controllers\StorieController;
 use App\Http\Controllers\userContoller;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/stories', [StorieController::class, 'allStories'])->name("stories");
+
+
+Route::get('/storie/{id}', [StorieController::class, 'getPostById']);
+
 
 
 Route::delete('/stories/{id}', [StorieController::class, 'destroy'])->name("delete");
