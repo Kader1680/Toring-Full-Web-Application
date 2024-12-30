@@ -55,12 +55,11 @@ class StorieController extends Controller
     public function addLike($id_post){
         $id_user = Auth::user()->id;
         $id_post = Story::find($id_post);
-
         $addLike = Like::create([
             'id_user' => $id_user,
-            'id_post' => $id_post,
+            'id_post' => $id_post->id,
         ]);
-        return view("allstories");
+        return redirect('stories');
     }
 
 

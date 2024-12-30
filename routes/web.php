@@ -16,6 +16,7 @@ Route::get('/stories', [StorieController::class, 'allStories'])->name("stories")
 
 
 Route::get('/storie/{id}', [StorieController::class, 'getPostById']);
+Route::post('/liked/{id}', [StorieController::class, 'addLike'])->name("liked");
 
 
 

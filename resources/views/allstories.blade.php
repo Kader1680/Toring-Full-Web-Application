@@ -88,7 +88,7 @@
         <div class=" d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center justify-content-between" >
                 {{-- <div class="countAnwser me-2">3</div> --}}
-                <h5 class=" fs-4 fw-bolder">{{ $st->title }}</h5>
+                <h5 class=" fs-4 fw-bolder"><a href="/storie/{{$st->id}}">{{ $st->title }}</a></h5>
             </div>
 
             @if (Auth::user()->id == $st->id_story)
@@ -112,14 +112,15 @@
             
             
             <div class="opt">
-                <i class="fa-solid fa-thumbs-up like fs-3"></i>
-                {{-- <form action="{{ route("stories", ['id_post' => $st->id]) }}" method="GET">
+                <form action="{{ route("liked", ['id' => $st->id]) }}" method="POST">
                     @csrf
-                    @method("GET")
+                    @method("POST")
                     <button class="border-0 bg-transparent" type="submit">
-                            Like
+                            
+                         <i class="fa-solid fa-thumbs-up like fs-3"></i>
+                
                     </button>
-                </form> --}}
+                </form>
                 
             
             </div>

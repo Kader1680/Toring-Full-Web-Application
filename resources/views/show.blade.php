@@ -109,16 +109,25 @@
             <p>{{ $postId->content }}</p>
             <div class="d-flex align-items-center ">
                 
-                
-                <div class="opt">
-                    <i class="fa-solid fa-thumbs-up like fs-3"></i>
-                    <form >
-                        
+                {{-- <div class="opt">
+                    <form action="{{ route("addLike", ['id_post' => $postId->id]) }}" method="POST">
+                        @csrf
+                        @method("POST")
                         <button class="border-0 bg-transparent" type="submit">
-                                LIKE
+                                
+                             <i class="fa-solid fa-thumbs-up like fs-3"></i>
+                    
                         </button>
-                        {{$likeCounts }}
                     </form>
+                    
+                
+                </div> --}}
+
+                <div class="opt d-flex pt-3">
+                    <i class="fa-solid fa-thumbs-up like fs-3"></i>
+                   
+                    <p class=" ms-2 fw-bolder fs-3" style="color: *#FF7D42"> ({{$likeCounts }})</p>
+                
                     
                 
                 </div>

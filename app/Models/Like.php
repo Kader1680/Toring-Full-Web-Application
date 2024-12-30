@@ -11,5 +11,7 @@ class Like extends Model
     
     protected $fillable = ['id_user','id_post'];
 
-    
+    const UPDATED_AT = null;
+    const CREATED_AT = null;
+
 }

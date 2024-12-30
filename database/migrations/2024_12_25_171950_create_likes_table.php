@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('id_post')->constrained('stories', 'id')->onDelete('cascade');
             
             $table->unique(['id_user', 'id_post']);
+            
          
         });
     }
