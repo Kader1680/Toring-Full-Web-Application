@@ -1,32 +1,34 @@
-FROM php:8.2-fpm-alpine
+# Set the base image to use for your container
+FROM php:8.2-fpm
 
-# Install Additional System Dependencies
-RUN apt-get update && apt-get install -y \ libzip-dev \ zip
+# Install system dependencies and PHP extensions
+RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev zip git && \
+    docker-php-ext-configure gd --with-freetype --with-jpeg && \
+    docker-php-ext-install gd pdo pdo_mysql
 
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Enable Apache mod_rewrite for URL rewriting
-RUN a2enmod rewrite
-
-# Install PHP extensions
-RUN docker-php-ext-install pdo_mysql zip
-
-# Configure Apache DocumentRoot to point to Laravel's public directory
-# and update Apache configuration files
-ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
-
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
-
-RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
-
+RUN unzip \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd \
+    && docker-php-ext-install pdo pdo_mysql \
+    && docker-php-ext-enable gd
+# Set the working directory
 WORKDIR /toring
 
-# Install composer
+# Copy composer.lock and composer.json
+COPY composer.json composer.lock /toring/
+
+# Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# Copy the rest of your application files to the container
+COPY . /toring
+
+# Install PHP dependencies
 RUN composer install
 
-COPY . .
+# Expose port 9000 for PHP-FPM
+EXPOSE 8000
 
-EXPOSE 8080
+# Start PHP-FPM server
+CMD ["php", "artisan", "serve", "--host=localhost", "--port=8000"]
