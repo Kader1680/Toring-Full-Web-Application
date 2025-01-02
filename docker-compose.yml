@@ -42,7 +42,7 @@ services:
     container_name: nginx
     restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "8000:80"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - .:/toring

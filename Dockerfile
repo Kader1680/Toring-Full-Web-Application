@@ -6,12 +6,6 @@ RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev
     docker-php-ext-configure gd --with-freetype --with-jpeg && \
     docker-php-ext-install gd pdo pdo_mysql
 
-
-RUN unzip \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd \
-    && docker-php-ext-install pdo pdo_mysql \
-    && docker-php-ext-enable gd
 # Set the working directory
 WORKDIR /toring
 
@@ -27,8 +21,8 @@ COPY . /toring
 # Install PHP dependencies
 RUN composer install
 
-# Expose port 9000 for PHP-FPM
-EXPOSE 8000
+# Expose port 9000 for PHP-FPM (the port Nginx will communicate with)
+EXPOSE 9000
 
-# Start PHP-FPM server
-CMD ["php", "artisan", "serve", "--host=localhost", "--port=8000"]
+# Start PHP-FPM server instead of Laravel's artisan serve
+CMD ["php-fpm"]
