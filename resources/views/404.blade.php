@@ -1,42 +1,55 @@
+@extends("layout.master")
 
-<style>
-    html body{
-
-      background: #70e1f5;
-      background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);
-      background: linear-gradient(to right, #ffd194, #70e1f5);
-      text-align: center;
-    }
-    .notFound{
-        background-color: rgb(255 155 155 / 71%);
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 70%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-    .notFound .ctn{
-
-    }
-    .ctn h1{
-        font-size: 4rem;
-        font-weight: 900
-}
-</style>
+@section("content")
 <head>
     <title>Toring | Page Not Found</title>
-</head>
-@extends("layout.master")
-@section("content")
-    <div class="notFound container">
-        <div class="ctn">
-            <h1>404 Not Found</h1>
-            <h3>Sorry, the page you are looking for could not be found.</h3>
-            <button class=" border-0 btn bg-danger p-3 "><a class=" fs-5 text-decoration-none text-white" href="/stories">Back To All Stories</a></button>
-        </div>
-    </div>
-@endsection
+    <style>
+        
 
+        .not-found-box {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            margin: auto;
+            
+        }
+
+        .not-found-box h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            color: #dc3545;
+            margin-bottom: 1rem;
+        }
+
+        .not-found-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .not-found-box a.btn {
+            font-size: 1.1rem;
+            padding: 0.75rem 2rem;
+        }
+
+        @media (max-width: 576px) {
+            .not-found-box h1 {
+                font-size: 3rem;
+            }
+
+            .not-found-box h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<div class="not-found-box">
+    <h1>404</h1>
+    <h3>Oops! The page you're looking for doesn't exist.</h3>
+    <a href="/stories" class="btn btn-danger">← Back to All Stories</a>
+</div>
+@endsection

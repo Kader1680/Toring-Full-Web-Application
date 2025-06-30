@@ -9,7 +9,7 @@
         <ul class="navbar-nav">
 
         <li class="nav-item">
-            <a class="nav-link   fs-4 fw-bolder me-lg-3" aria-current="page" href="/home">Home</a>
+            <a class="nav-link   fs-4 fw-bolder me-lg-3" aria-current="page" href="/home">About</a>
         </li>
           <li class="nav-item">
             <a class="nav-link   fs-4 fw-bolder me-lg-3" aria-current="page" href="/stories">All Questions</a>

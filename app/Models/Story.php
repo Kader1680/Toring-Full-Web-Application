@@ -12,20 +12,23 @@ class Story extends Model
     protected $fillable = [
         'title',
         'content',
-        'id_story',
-        'id_category',
+        'user_id',
+        'category_id',
     ];
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
-    public function comment(){
-        return $this->hasMany(Comments::class);
-    }
-    public function categorie(){
-        return $this->belongsTo(Category::class);
-    }
+public function user(){
+    return $this->belongsTo(User::class, 'user_id');
+}
 
-    public function likes(){
-        return $this->belongsToMany(User::class, 'likes', 'id_post', 'id_user');
-    }
+public function category(){
+    return $this->belongsTo(Category::class, 'id_category');
+}
+
+public function comments(){
+    return $this->hasMany(Comments::class);
+}
+
+public function likes(){
+    return $this->belongsToMany(User::class, 'likes', 'id_post', 'id_user');
+}
+
 }

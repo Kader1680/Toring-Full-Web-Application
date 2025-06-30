@@ -20,23 +20,23 @@ class StorieController extends Controller
    
 
     public function allStories(){
-        $auth = Auth::user()->id;
-        $authStory = Story::all()->where('id_story', $auth);
+
+         
+        $auth = Auth::user()?->id;
+        $authStory = Story::all()->where('user_id', $auth);
         
         $stories = Story::all();
         $comments = Comments::all();
-        $idStory = Story::select('id_story')->get();
-        // dd(gettype($idStory));
+        $idStory = Story::select('user_id')->get();
        
         foreach ($idStory as $id) {
-        // dd(gettype($id->id_story));
-            $name = User::all()->where('id', $id->id_story);
+            $name = User::all()->where('id', $id->id);
 
         }
         
-       
+        
 
-        return view("allstories" ,compact('stories', 'authStory', 'comments', 'name'));
+        return view("allstories" ,compact('stories',   'comments'));
         
     }
 
@@ -70,11 +70,11 @@ class StorieController extends Controller
         $question = Story::find($id);
         $stories = Story::all();
         $comments = Comments::all();
-        $idStory = Story::select('id_story')->get();
+        $idStory = Story::select('id_user')->get();
         // dd(gettype($idStory));
        foreach ($idStory as $id) {
-        // dd(gettype($id->id_story));
-        $name = User::all()->where('id', $id->id_story);
+        // dd(gettype($id->id_user));
+        $name = User::all()->where('id', $id->id_user);
 
        }
         return view('question' ,compact('question', 'comments'));

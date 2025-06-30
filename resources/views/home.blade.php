@@ -1,42 +1,82 @@
 @extends("layout.master")
+
 @section("content")
 <head>
     <title>Toring | Home</title>
+    <style>
+        .hero-image {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5);
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            z-index: 10;
+            font-size: 2rem;
+        }
+        .testimonial {
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            background-color: #fff;
+        }
+        .testimonial:hover {
+            transform: translateY(-5px);
+        }
+        .testimonial img {
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
-<style>
 
-
-</style>
-
-<div class="container"  style="margin-bottom: 8rem">
-    <div class="bg position-relative">
-        <h2  class="text-center fw-bolder position-absolute z-10  text-white">Welcome To Toring Site To Anwser Question you want <br></h2>
-
-        <img class=" " src="https://t3.ftcdn.net/jpg/02/25/02/48/360_F_225024841_7b2gkqxIyskWsexHw19gIW9fro1iuOns.jpg" alt="">
+<div class="container my-5">
+    <!-- Hero Section -->
+    <div class="hero-image mb-5">
+        <img src="https://t3.ftcdn.net/jpg/02/25/02/48/360_F_225024841_7b2gkqxIyskWsexHw19gIW9fro1iuOns.jpg" alt="Hero">
+        <div class="hero-text">
+            Welcome To Toring Site<br>To Answer Any Question You Want
+        </div>
     </div>
-<div style="margin-top: 5rem" class="row text-center  ">
-    <div class="col-md-4 col-sm-12 box bg-white ">
-        <img width="100" src="https://media.licdn.com/dms/image/D4E03AQHjeMcDl7Dqfg/profile-displayphoto-shrink_200_200/0/1672154529520?e=2147483647&v=beta&t=C0CfRHRMU81bsM2NMs_sFLZ7d3ocv5uY_SNcDzRT9hc" alt="">
-        <h3>Abdealkader</h3>
-        <p>You made it so simple. My new site is so much faster and easier to work with than my old site. I just choose the page, make the change and click save</p>
-    </div>
-    <div class="col-md-4 col-sm-12 box bg-white">
-        <img width="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMMCIdR2rD-JmCMlnnCmGSGimkWVYXiKpsz_HHRxJaGRZPLSC5wv7zTg5-EZdCkihp_J4&usqp=CAU" alt="">
 
-        <h3>karim</h3>
-        <p>Wow. I just updated my site and it was SO SIMPLE. I am blown away. You guys truly kick ass. Thanks for being so awesome. High fives!</p>
-    </div>
-    <div class="col-md-4 col-sm-12 box bg-white">
-        <img width="100" src="https://live.staticflickr.com/7868/47425537761_53248c84b0_b.jpg" alt="">
-
-        <h3>amel</h3>
-        <p>I just wanted to share a quick note and let you know that you guys do a really good job. I’m glad I decided to work with you </p>
+    <!-- Testimonials Section -->
+    <div class="row text-center g-4">
+        <div class="col-md-4 col-sm-12">
+            <div class="testimonial">
+                <img width="100" src="https://media.licdn.com/dms/image/D4E03AQHjeMcDl7Dqfg/profile-displayphoto-shrink_200_200/0/1672154529520?e=2147483647&v=beta&t=C0CfRHRMU81bsM2NMs_sFLZ7d3ocv5uY_SNcDzRT9hc" alt="Abdelkader">
+                <h4>Abdelkader</h4>
+                <p class="text-muted">You made it so simple. My new site is much faster and easier to work with than my old site.</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="testimonial">
+                <img width="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMMCIdR2rD-JmCMlnnCmGSGimkWVYXiKpsz_HHRxJaGRZPLSC5wv7zTg5-EZdCkihp_J4&usqp=CAU" alt="Mohamed">
+                <h4>Mohamed</h4>
+                <p class="text-muted">Wow. I just updated my site and it was SO SIMPLE. You guys truly kick ass!</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-12">
+            <div class="testimonial">
+                <img width="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbcz4j9rRkAF1YHQU9Rk6xl9LlPHxZRSCZXQ&s" alt="Amel">
+                <h4>Amel</h4>
+                <p class="text-muted">Quick note to say you do a great job. I'm glad I decided to work with you!</p>
+            </div>
+        </div>
     </div>
 </div>
-</div>
-
-
-
-
-{{-- </div> --}}
 @endsection

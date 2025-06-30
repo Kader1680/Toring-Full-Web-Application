@@ -15,10 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->text("content");
-            $table->unsignedBigInteger('id_story');
-            $table->unsignedBigInteger('id_category');
-            $table->foreign('id_story')->references('id')->on('users')->cascadeOnDelete();
-            $table->foreign('id_category')->references('id')->on('categories')->cascadeOnDelete();
+
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('category_id');
+
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
+
             $table->timestamps();
         });
     }

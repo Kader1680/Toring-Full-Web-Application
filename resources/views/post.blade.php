@@ -24,8 +24,8 @@
         </div>
        <div class="mb-4">
         <select  name="option" class="form-select" aria-label="Default select example">
-            {{-- <option >Choose Categories</option> --}}
-            <option selected value="1">Web Developement</option>
+            
+            <option  selected value="1">Web Developement</option>
             <option value="2">Android</option>
             <option value="3">Databases</option>
             <option value="4">Operating Systems</option>
