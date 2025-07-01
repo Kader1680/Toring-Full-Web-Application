@@ -14,10 +14,13 @@ return new class extends Migration
         Schema::create('likes', function (Blueprint $table) {
              
             $table->id();
-            $table->foreignId('id_user')->constrained('users', 'id')->onDelete('cascade');
-            $table->foreignId('id_post')->constrained('stories', 'id')->onDelete('cascade');
+          
             
-            $table->unique(['id_user', 'id_post']);
+             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+        $table->foreignId('story_id')->constrained()->onDelete('cascade'); 
+
+
+            $table->unique(['user_id', 'story_id']);
             
          
         });
