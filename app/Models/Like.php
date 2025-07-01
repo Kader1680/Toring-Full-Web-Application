@@ -9,7 +9,7 @@ class Like extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['id_user','id_post'];
+    protected $fillable = ['user_id','story_id'];
 
     const UPDATED_AT = null;
     const CREATED_AT = null;

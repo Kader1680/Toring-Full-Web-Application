@@ -10,7 +10,7 @@ class Comments extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'id_comment',
+        'story_id',
     ];
     public function story(){
         return $this->belongsTo(Story::class);

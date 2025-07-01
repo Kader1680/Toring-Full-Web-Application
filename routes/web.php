@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\PostStorieController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ReactionsController;
@@ -68,3 +69,8 @@ Route::get('/auth/facebook/callback', [socialteController::class, 'handleFaceboo
 Route::get('/home', function (){
     return view("home");
 });
+
+
+Route::post('/stories', [FavoriteController::class, 'toggleStory'])->name('story.favorite');
+
+ 

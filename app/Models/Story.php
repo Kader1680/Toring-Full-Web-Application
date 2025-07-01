@@ -14,13 +14,14 @@ class Story extends Model
         'content',
         'user_id',
         'category_id',
+        'comment_id'
     ];
 public function user(){
     return $this->belongsTo(User::class, 'user_id');
 }
 
 public function category(){
-    return $this->belongsTo(Category::class, 'id_category');
+    return $this->belongsTo(Category::class, 'category_id');
 }
 
 public function comments(){
@@ -28,7 +29,19 @@ public function comments(){
 }
 
 public function likes(){
-    return $this->belongsToMany(User::class, 'likes', 'id_post', 'id_user');
+    return $this->belongsToMany(User::class, 'likes', 'story_id', 'user_id');
 }
+
+
+public function favorites()
+{
+    return $this->hasMany(StoryFavorite::class); // for Story
+}
+
+public function isFavoritedBy($user)
+{
+    return $this->favorites()->where('user_id', $user->id)->exists();
+}
+
 
 }
