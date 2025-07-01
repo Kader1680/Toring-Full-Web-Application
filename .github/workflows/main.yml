@@ -17,18 +17,72 @@ jobs:
       - name: Copy files to EC2
         uses: appleboy/scp-action@v0.1.3
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_KEY }}
+          host: ec2-13-49-223-195.eu-north-1.compute.amazonaws.com
+          username: ubuntu
+          key: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEowIBAAKCAQEAoP5iDHYpQe+UKDrgA+dOIxKREWthnMxA7HIKEuN2IsHrVLxE
+            WJYeA86YtSYL/Dpe5cfJk24Pp6c/5+hg7+ii3iDVSDtD36eQCsX39uP05DxFvJMx
+            BWF87k4ZhZCmGtURhA6eXKb5Nd5bAEzCnYHGWBSRu8f8XcLTho/eRtBWXlbWeEBx
+            KakYb/p51hnj4V3FbT8QpWfGzqUgiS6t3tXDbQlChxbDM2KI+OlZ7ltOzPTY9jRr
+            NpO4i0SgJvgd58IcZ1sfOduTW+e31QbnDKtEmb/jft2z21IjaUXOVwDGr0T/nnWt
+            bqAdIETajLbgqm92trpGHzV6kw6JjwAzPuY/xwIDAQABAoIBADf+ggeniU3/j942
+            K/fvmUOlj4Mpf/fTKrmSKGLNbidEnx8HpBXTkHjugDpxEzYU7zCoPjniy9sZ1qZI
+            Mn7+wLbVYJkQ09iUJQs6M7ZRLrm7JN4jq6cdcyBHVaUY3Ez00nTFyNqc0Iyl26zN
+            BdtWaa/054MSWXoa6wsgOsUSbRe+OvKI6NCwO77l5pf46YpBpnJ6oVk8i+nBLTbS
+            vRgOtF3VYYeZ1Tmi3aTtaSDnfs0UoN/qDZifLLNmDCHmqiw/Nmz7bgi1j6eekHmV
+            +x1Z2r79+feWJHvwL7moBqCeLHSFQ7RUnjhLQ33LWVaqbuQYxd6ZqPsyNMsTLWv7
+            zIFxbqECgYEA0CEr76s2qW0cirwZFkuEOzQOUAjCynye27pN1qFKrD8RjXzUv2/0
+            1nkKqKpm8f52d9b06Kwq6y983kpk2hqnl5/JAdTeJdeyT9Q5mjPsjBFEp4nsjcMm
+            YbdOjs5weEaDWTuEClhSfI3rJHNgwIHGR4CFiFeHWlnCpVTN6zBjkXkCgYEAxgXQ
+            Yr92fpCPv9IEj0jy5EW2UE2aCKBQoTeNTisDrz3Z4n4DERbfvsQexqsSIMgTcCSg
+            6S9Frdw7fK3YYTdbImqDGUhJujBJtf1cMiWTqPUZiTVt5vmjMO3UeUayKsEO07gv
+            Csi/YKH/PnGGZsvIuLWA9bNttG++qsGg/c4/Sz8CgYAorALRAC1baJYmSmHAqJs7
+            ko2leEDQnw/QMpUZd0WHaX+9nYJZssAu1VKO6VXavnZaLuiHO3XbpdkJ+5G/yWus
+            xq3aLMYIsSEIVpm3F6SHLqyy7NIMVfF/MPoqEA+MgYMTgfzopJ/h9T3ZTq6+j922
+            hVgS77/kmRvfgTYIWtlqSQKBgDrEFPCJM2giDJb3g6TmGDcIPS+dp/2xXdxKOSQe
+            fcxuxY+Cp/RVXncliqCYuhuCZMpeBGbPQZV0Cy9YBCPtop0XEOra2g5oMCfTFZ5I
+            Kob0nexrL79hDD4EBo8rHMq1WmoYedVwd+L8kFv+os004s92BdxksETg+KuCJP3N
+            TFlPAoGBALOxr93hEwR4UoEIhlxXst2aShMfYp7zaOyGdQPkCQu9DSKhMQBi9nXR
+            +8xXKqivjafg0arMgtORxE/o+RluIGio93ZCzp6Jjoje/lDG1kuSlDgDLuk2aPyx
+            q1dtqdTnYZY+XgZdg5Po4AYPOl837H0cut/4m+Bm4UMkpdwP+2Ha
+            -----END RSA PRIVATE KEY-----
           source: "."
           target: "/home/ubuntu/Toring-Full-Web-Application"
 
       - name: Run Laravel Commands on EC2
         uses: appleboy/ssh-action@v0.1.10
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_KEY }}
+          host: ec2-13-49-223-195.eu-north-1.compute.amazonaws.com
+          username: ubuntu
+          key: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEowIBAAKCAQEAoP5iDHYpQe+UKDrgA+dOIxKREWthnMxA7HIKEuN2IsHrVLxE
+            WJYeA86YtSYL/Dpe5cfJk24Pp6c/5+hg7+ii3iDVSDtD36eQCsX39uP05DxFvJMx
+            BWF87k4ZhZCmGtURhA6eXKb5Nd5bAEzCnYHGWBSRu8f8XcLTho/eRtBWXlbWeEBx
+            KakYb/p51hnj4V3FbT8QpWfGzqUgiS6t3tXDbQlChxbDM2KI+OlZ7ltOzPTY9jRr
+            NpO4i0SgJvgd58IcZ1sfOduTW+e31QbnDKtEmb/jft2z21IjaUXOVwDGr0T/nnWt
+            bqAdIETajLbgqm92trpGHzV6kw6JjwAzPuY/xwIDAQABAoIBADf+ggeniU3/j942
+            K/fvmUOlj4Mpf/fTKrmSKGLNbidEnx8HpBXTkHjugDpxEzYU7zCoPjniy9sZ1qZI
+            Mn7+wLbVYJkQ09iUJQs6M7ZRLrm7JN4jq6cdcyBHVaUY3Ez00nTFyNqc0Iyl26zN
+            BdtWaa/054MSWXoa6wsgOsUSbRe+OvKI6NCwO77l5pf46YpBpnJ6oVk8i+nBLTbS
+            vRgOtF3VYYeZ1Tmi3aTtaSDnfs0UoN/qDZifLLNmDCHmqiw/Nmz7bgi1j6eekHmV
+            +x1Z2r79+feWJHvwL7moBqCeLHSFQ7RUnjhLQ33LWVaqbuQYxd6ZqPsyNMsTLWv7
+            zIFxbqECgYEA0CEr76s2qW0cirwZFkuEOzQOUAjCynye27pN1qFKrD8RjXzUv2/0
+            1nkKqKpm8f52d9b06Kwq6y983kpk2hqnl5/JAdTeJdeyT9Q5mjPsjBFEp4nsjcMm
+            YbdOjs5weEaDWTuEClhSfI3rJHNgwIHGR4CFiFeHWlnCpVTN6zBjkXkCgYEAxgXQ
+            Yr92fpCPv9IEj0jy5EW2UE2aCKBQoTeNTisDrz3Z4n4DERbfvsQexqsSIMgTcCSg
+            6S9Frdw7fK3YYTdbImqDGUhJujBJtf1cMiWTqPUZiTVt5vmjMO3UeUayKsEO07gv
+            Csi/YKH/PnGGZsvIuLWA9bNttG++qsGg/c4/Sz8CgYAorALRAC1baJYmSmHAqJs7
+            ko2leEDQnw/QMpUZd0WHaX+9nYJZssAu1VKO6VXavnZaLuiHO3XbpdkJ+5G/yWus
+            xq3aLMYIsSEIVpm3F6SHLqyy7NIMVfF/MPoqEA+MgYMTgfzopJ/h9T3ZTq6+j922
+            hVgS77/kmRvfgTYIWtlqSQKBgDrEFPCJM2giDJb3g6TmGDcIPS+dp/2xXdxKOSQe
+            fcxuxY+Cp/RVXncliqCYuhuCZMpeBGbPQZV0Cy9YBCPtop0XEOra2g5oMCfTFZ5I
+            Kob0nexrL79hDD4EBo8rHMq1WmoYedVwd+L8kFv+os004s92BdxksETg+KuCJP3N
+            TFlPAoGBALOxr93hEwR4UoEIhlxXst2aShMfYp7zaOyGdQPkCQu9DSKhMQBi9nXR
+            +8xXKqivjafg0arMgtORxE/o+RluIGio93ZCzp6Jjoje/lDG1kuSlDgDLuk2aPyx
+            q1dtqdTnYZY+XgZdg5Po4AYPOl837H0cut/4m+Bm4UMkpdwP+2Ha
+            -----END RSA PRIVATE KEY-----
           script: |
             cd /home/ubuntu/Toring-Full-Web-Application
             composer install --no-interaction --prefer-dist --optimize-autoloader
