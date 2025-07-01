@@ -1,4 +1,4 @@
- name: Deploy Laravel to EC2
+name: Deploy Laravel to EC2
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           source: "."
-          target: "/home/nameproject"
+          target: "/home/ubuntu/Toring-Full-Web-Application"
 
       - name: Run Laravel Commands on EC2
         uses: appleboy/ssh-action@v0.1.10
@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            cd /home/nameproject
+            cd /home/ubuntu/Toring-Full-Web-Application
             composer install --no-interaction --prefer-dist --optimize-autoloader
             php artisan migrate --force
             php artisan config:cache
