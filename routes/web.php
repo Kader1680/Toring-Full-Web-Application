@@ -85,12 +85,11 @@ Route::post('/stories', [FavoriteController::class, 'toggleStory'])->name('story
 Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
 Route::post('/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
 
-Route::post('/success', [PaymentController::class, 'success'])->name('payment.success');
+
+Route::get('/success', [PaymentController::class, 'success'])->name('success');
 
 
-// Route::get('/success', function () {
-//     return view(view: "success");
-// })->name('payment.success');
+
 Route::get('/cancel', function () {
     return "Payment Canceled!";
 })->name('payment.cancel');

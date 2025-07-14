@@ -28,6 +28,7 @@ class User extends Authenticatable
         'password',
         'social_id',
         'social_type',
+        "is_subscribe "
     ];
 
     /**
@@ -61,5 +62,5 @@ class User extends Authenticatable
     public function likesPost(){
         return $this->belongsToMany(Story::class, 'likes', 'id_user', 'id_post');
     }
-    
+
 }

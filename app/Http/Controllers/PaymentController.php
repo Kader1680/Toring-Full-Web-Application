@@ -23,10 +23,12 @@ class PaymentController extends Controller
 
 
     if (Auth::check()) {
-     User::find(Auth::id())->update(['is_subscribe' => 1]);
+     $user = User::find(Auth::id());
+    $user->is_subscribe= 1;
+    $user->save();
+return view("success");
     }
 
-    return view('success');
 
     }
 
@@ -57,7 +59,7 @@ class PaymentController extends Controller
                     'quantity' => 1,
                 ]],
                 'mode' => 'payment',
-                'success_url' => route('payment.success', ),
+                'success_url' => route('success', ),
 
                 'cancel_url' => route('payment.cancel'),
             ]);
