@@ -110,8 +110,13 @@
                 <h5 class="fs-4 fw-bolder"><a href="/storie/{{$st->id}}">{{ $st->title }}</a></h5>
             </div>
 
-            @if (Auth::user()->id == $st->id_story)
+
+            <a class="navbar-brand fs-2 fw-bolder" href="/payment"><img width="30" height="30" src="{{ asset("assets/images/lock.png") }}" alt="" srcset=""></a>
+
+            @if (Auth::user()?->id == $st->id_story)
             <div class="d-flex">
+
+
                 <a href="/stories/{{ $st->id }}">
                     <img class="me-3" width="15" src="{{ asset("assets/images/edit.png") }}" alt="">
                 </a>

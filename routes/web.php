@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PostStorieController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ReactionsController;
@@ -73,4 +74,16 @@ Route::get('/home', function (){
 
 Route::post('/stories', [FavoriteController::class, 'toggleStory'])->name('story.favorite');
 
- 
+
+
+
+
+
+Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
+Route::post('/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
+Route::get('/success', function () {
+    return "Payment Successful!";
+})->name('payment.success');
+Route::get('/cancel', function () {
+    return "Payment Canceled!";
+})->name('payment.cancel');

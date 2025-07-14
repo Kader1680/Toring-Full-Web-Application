@@ -43,5 +43,10 @@ return [
         'redirect' => env('FACEBOOK_REDIRECT'),
     ],
 
+    'stripe' => [
+        'secret' => env('STRIPE_SECRET'),
+        'key' => env('STRIPE_KEY'),
+    ],
+
 
 ];
