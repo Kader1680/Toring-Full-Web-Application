@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
 
@@ -12,12 +14,35 @@ class PaymentController extends Controller
     public function index()
     {
         return view('payment');
+
     }
+
+
+  public function success()
+    {
+
+
+    if (Auth::check()) {
+     User::find(Auth::id())->update(['is_subscribe' => 1]);
+    }
+
+    return view('success');
+
+    }
+
+
     public function checkout(Request $request)
     {
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
 
+        // $id_user = Auth::user()?->id;
+
+        // $is_subscribe =User::find($id_user);
+        // $is_subscribe->update(['is_subscribe' => 1]);
+
+
+// $is_subscribe->update
         try {
             $session = Session::create([
                 'payment_method_types' => ['card'],
@@ -32,10 +57,8 @@ class PaymentController extends Controller
                     'quantity' => 1,
                 ]],
                 'mode' => 'payment',
-                'success_url' => route('payment.success'),
-                if (route('payment.success')) {
+                'success_url' => route('payment.success', ),
 
-                }
                 'cancel_url' => route('payment.cancel'),
             ]);
             return redirect($session->url, 303);
@@ -43,6 +66,9 @@ class PaymentController extends Controller
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
+
+
+
 
 
 

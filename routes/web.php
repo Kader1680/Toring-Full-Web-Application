@@ -17,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/stories', [StorieController::class, 'allStories'])->name("stories");
 
 
-Route::get('/storie/{id}', [StorieController::class, 'getPostById']);
+Route::get('/storie/{id}', [StorieController::class, 'getPostById'])->middleware("subscription");
+
+
+
 Route::post('/liked/{id}', [StorieController::class, 'addLike'])->name("liked");
 
 
@@ -81,9 +84,13 @@ Route::post('/stories', [FavoriteController::class, 'toggleStory'])->name('story
 
 Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
 Route::post('/checkout', [PaymentController::class, 'checkout'])->name('payment.checkout');
-Route::get('/success', function () {
-    return "Payment Successful!";
-})->name('payment.success');
+
+Route::post('/success', [PaymentController::class, 'success'])->name('payment.success');
+
+
+// Route::get('/success', function () {
+//     return view(view: "success");
+// })->name('payment.success');
 Route::get('/cancel', function () {
     return "Payment Canceled!";
 })->name('payment.cancel');

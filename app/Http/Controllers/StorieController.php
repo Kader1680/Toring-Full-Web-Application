@@ -44,7 +44,7 @@ class StorieController extends Controller
     public function getPostById($id){
 
         $postId = Story::find($id);
-        $likeCounts = Like::where('id_post', $postId->id)->Count();
+        $likeCounts = Like::where('story_id', $postId->id)->Count();
         
         return view('show', compact("postId", 'likeCounts'));
     }
@@ -57,7 +57,7 @@ class StorieController extends Controller
         $id_post = Story::find($id_post);
         $addLike = Like::create([
             'id_user' => $id_user,
-            'id_post' => $id_post->id,
+            'story_id' => $id_post->id,
         ]);
         return redirect('stories');
     }

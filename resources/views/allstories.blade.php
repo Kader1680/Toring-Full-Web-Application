@@ -111,7 +111,12 @@
             </div>
 
 
-            <a class="navbar-brand fs-2 fw-bolder" href="/payment"><img width="30" height="30" src="{{ asset("assets/images/lock.png") }}" alt="" srcset=""></a>
+@if (Auth::user()->is_subscribe == 0)
+  <a class="navbar-brand fs-4 text-white bg-danger fw-bolder" href="/payment">Subscribe <img width="30" height="30" src="{{ asset("assets/images/lock.png") }}" alt="" srcset="">
+
+  </a>
+@endif
+
 
             @if (Auth::user()?->id == $st->id_story)
             <div class="d-flex">
@@ -131,7 +136,7 @@
             @endif
         </div>
 
-        <p>{{ $st->content }}</p>
+        {{-- <p>{{ $st->content }}</p> --}}
 
         <div class="d-flex align-items-center">
 
